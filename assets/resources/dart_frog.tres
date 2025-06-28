@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FrogData" load_steps=3 format=3 uid="uid://cyrf8v3je50vj"]
+
+[ext_resource type="Script" uid="uid://54ym1gykbbgq" path="res://scripts/frog_data.gd" id="1_4r4ig"]
+[ext_resource type="Texture2D" uid="uid://sfbqxc0mjs8x" path="res://assets/images/dart.PNG" id="2_ajkf1"]
+
+[resource]
+script = ExtResource("1_4r4ig")
+texture = ExtResource("2_ajkf1")
+powerup = 1
+metadata/_custom_type_script = "uid://54ym1gykbbgq"

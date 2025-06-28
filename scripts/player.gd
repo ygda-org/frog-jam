@@ -16,6 +16,8 @@ var CHAIN_PULL: int = 105
 
 var chain_velocity := Vector2(0,0)
 
+var poisonous : bool = false
+
 func _ready() -> void:
 	self.powerup_timer.wait_time = self.powerup_time_length
 
@@ -63,13 +65,17 @@ func _physics_process(_delta: float) -> void:
 	position.y = min(0.0, position.y)
 
 func enemy_collision(enemy: Variant):
-	print("Player collided with: " + str(enemy))
+	if poisonous:
+		enemy.suicide()
+	else:
+		print("Player collided with: " + str(enemy))
 
 func collect_frog(frog_data: FrogData) -> void:
 	STOMACH.add_creature(frog_data.texture)
 	
 	match frog_data.powerup:
 		FrogData.Powerups.Slowfall:
+			print("Slow fall attained!")
 			self.GRAVITY = self.MAX_GRAVITY / 2
 			self.powerup_timer.timeout.connect(func():
 				self.GRAVITY = self.MAX_GRAVITY
@@ -78,3 +84,11 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.powerup_timer.one_shot = true
 			self.powerup_timer.start()
 			#print("slowfall activated")
+		FrogData.Powerups.Dart:
+			print("Poison attained!")
+			poisonous = true
+			self.powerup_timer.timeout.connect(func():
+				poisonous = false
+				)
+			self.powerup_timer.one_shot = true
+			self.powerup_timer.start()

@@ -5,6 +5,7 @@ extends Area2D
 
 func set_data(new_data: FrogData) -> void:
 	self.frog_data = new_data
+	$"Frog Sprite".texture = new_data.texture
 
 func _on_body_entered(body: Node2D) -> void:
 	(body as Player).collect_frog(frog_data)

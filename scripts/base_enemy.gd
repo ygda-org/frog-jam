@@ -16,3 +16,6 @@ func _process(delta: float) -> void:
 func _on_body_entered(body: Node):
 	if body is Player:
 		(body as Player).enemy_collision(self)
+
+func suicide():
+	call_deferred("queue_free")
