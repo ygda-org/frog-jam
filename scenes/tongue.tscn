@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bhd6ncjp8omr"]
 
 [ext_resource type="Script" uid="uid://lcka3hsl6fuh" path="res://scripts/tongue.gd" id="1_kcni0"]
-[ext_resource type="Texture2D" uid="uid://b2m5yajks36cg" path="res://assets/link.png" id="2_8i22f"]
-[ext_resource type="Texture2D" uid="uid://ctpetxvpxss3n" path="res://assets/hook.png" id="3_go4iq"]
+[ext_resource type="Texture2D" uid="uid://b2m5yajks36cg" path="res://assets/images/link.png" id="2_8i22f"]
+[ext_resource type="Texture2D" uid="uid://ctpetxvpxss3n" path="res://assets/images/hook.png" id="3_go4iq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_q6f22"]
 radius = 4.0

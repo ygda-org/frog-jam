@@ -1,24 +1,26 @@
+class_name Player
 extends CharacterBody2D
 
-const JUMP_FORCE = 1550
-const GRAVITY = 60
-const MAX_SPEED = 2000
-const FRICTION_AIR = 0.95
-const CHAIN_PULL = 105
+var JUMP_FORCE: int = 1550
+var GRAVITY: int = 60
+var MAX_SPEED: int = 2000
+var FRICTION_AIR: float = 0.95
+var CHAIN_PULL: int = 105
 
-@export var rest_length: float = 200.0
-@export var stiffness: float = 5.0
-@export var damping: float = 1.0
+@export var powerup_time_length: int = 10
 
 @onready var tongue: Tongue = $Tongue
+@onready var powerup_timer: Timer = $Timer
 
 var chain_velocity := Vector2(0,0)
 
+func _ready() -> void:
+	self.powerup_timer.wait_time = self.powerup_time_length
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			tongue.shoot(event.position - get_viewport().size * 0.5)
+			tongue.shoot(self.get_local_mouse_position())
 		else:
 			tongue.release()
 
@@ -50,3 +52,14 @@ func _physics_process(_delta: float) -> void:
 		velocity.x *= FRICTION_AIR
 		if velocity.y > 0:
 			velocity.y *= FRICTION_AIR
+
+func apply_powerup(powerup: FrogData.Powerups) -> void:
+	match powerup:
+		FrogData.Powerups.Slowfall:
+			self.GRAVITY /= 2
+			self.powerup_timer.timeout.connect(func():
+				self.GRAVITY *= 2
+				print("slowfall deactivated")
+				)
+			self.powerup_timer.start()
+			print("slowfall activated")
