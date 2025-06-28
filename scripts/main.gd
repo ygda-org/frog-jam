@@ -28,8 +28,8 @@ func _ready() -> void:
 	else:
 		print("Error loading frog datas")
 	
-	highest_spawn = camera.global_position.y - spawn_margin
-	spawn_up_to(camera.global_position.y - spawn_margin)
+	highest_spawn = camera.global_position.y - spawn_margin / 3
+	spawn_up_to(highest_spawn)
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
