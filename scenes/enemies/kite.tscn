@@ -20,9 +20,11 @@ animations = [{
 }]
 
 [node name="Kite" type="RigidBody2D"]
+freeze = true
 script = ExtResource("1_jhdmt")
 
-[node name="BaseEnemyComponent" parent="." instance=ExtResource("3_okv3r")]
+[node name="BaseEnemyComponent" parent="." node_paths=PackedStringArray("parent") instance=ExtResource("3_okv3r")]
+parent = NodePath("..")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_jhdmt")
