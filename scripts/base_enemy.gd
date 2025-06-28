@@ -2,11 +2,7 @@ extends Node2D
 
 class_name Base_Enemy
 
-@export var parent : RigidBody2D
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	parent.body_entered.connect(_on_body_entered.bind(Node))
+@onready var parent : CharacterBody2D = get_parent()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

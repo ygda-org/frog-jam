@@ -18,19 +18,18 @@ var frog_datas: Array[FrogData] = []
 
 func _ready() -> void:
 	# grabbing all of the bubble frog resources
-	var dir = DirAccess.open("res://assets/resources")
+	var dir = DirAccess.open("res://assets/resources/frog_resources")
 	if dir:
 		dir.list_dir_begin()
 		var file_name = dir.get_next()
 		while file_name != "":
-			frog_datas.append(load("res://assets/resources/" + file_name) as FrogData)
+			frog_datas.append(load("res://assets/resources/frog_resources/" + file_name) as FrogData)
 			file_name = dir.get_next()
 	else:
 		print("Error loading frog datas")
 	
 	highest_spawn = camera.global_position.y - spawn_margin
 	spawn_up_to(camera.global_position.y - spawn_margin)
-	
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
@@ -62,6 +61,9 @@ func spawn_layer_at(y_pos: float) -> void:
 	#spawn enemies
 	for i in enemies_per_layer:
 		var x = randi_range(-screen_width, screen_width)
+		var current_enemy = load("res://scenes/enemies/asteroid.tscn").instantiate()
+		current_enemy.position = Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
+		add_child(current_enemy)
 		#spawn enemies at Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
 	
 	#spawn bubbles
