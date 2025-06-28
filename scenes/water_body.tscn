@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://wtytpddo0wx5"]
+
+[ext_resource type="Script" uid="uid://bjxrp3ee2vqhf" path="res://scripts/water_body.gd" id="1_i3kw6"]
+[ext_resource type="Shader" uid="uid://d3xy3n5kt7wjr" path="res://scripts/water_shader.gdshader" id="2_i3kw6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ugtve"]
+shader = ExtResource("2_i3kw6")
+shader_parameter/tint = Color(0, 0.583059, 0.513577, 1)
+
+[sub_resource type="Curve2D" id="Curve2D_4l06b"]
+
+[node name="Water_Body" type="Node2D"]
+script = ExtResource("1_i3kw6")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+visible = false
+
+[node name="Water Polygon" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_ugtve")
+color = Color(1.92523e-07, 0.404875, 0.408589, 1)
+
+[node name="Water Border" type="Path2D" parent="."]
+curve = SubResource("Curve2D_4l06b")

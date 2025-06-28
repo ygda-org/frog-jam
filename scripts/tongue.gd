@@ -6,7 +6,7 @@ extends Node2D
 
 @onready var frog: CharacterBody2D = get_parent()
 
-@export var max_tongue_length: int = 10000
+@export var max_tongue_length: int = 7500
 
 var direction: Vector2 = Vector2.ZERO
 var tip_position: Vector2 = Vector2.ZERO
