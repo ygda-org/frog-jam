@@ -43,7 +43,7 @@ animations = [{
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_143v5")
 autoplay = "default"
-frame_progress = 0.756668
+frame_progress = 0.405684
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-159, 24, -138, 20, -108, 29, -48, 11, 3, 25, 44, 25, 122, 9, 221, -23, 229, -16, 229, 2, 214, 34, 176, 62, 127, 81, 50, 100, 10, 99, 2, 110, -18, 121, -54, 125, -99, 122, -107, 119, -119, 125, -145, 129, -164, 122, -179, 111, -188, 92, -191, 69, -185, 51, -168, 32)
