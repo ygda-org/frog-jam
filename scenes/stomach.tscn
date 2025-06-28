@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://btd1ic7rl6olk"]
+
+[ext_resource type="Script" uid="uid://b6vs7ktglxwy6" path="res://scenes/stomach.gd" id="1_i5qrw"]
+[ext_resource type="PackedScene" uid="uid://ba28j2umdf122" path="res://scenes/stored_frog.tscn" id="2_4a0xn"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_4a0xn"]
+a = Vector2(-10, 64)
+b = Vector2(10, 64)
+
+[node name="Stomach" type="Node2D"]
+script = ExtResource("1_i5qrw")
+
+[node name="static" type="StaticBody2D" parent="."]
+
+[node name="c1" type="CollisionShape2D" parent="static"]
+shape = SubResource("SegmentShape2D_4a0xn")
+
+[node name="stored_frog" parent="." instance=ExtResource("2_4a0xn")]

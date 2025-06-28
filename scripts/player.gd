@@ -6,6 +6,7 @@ var GRAVITY: int = 60
 var MAX_SPEED: int = 2000
 var FRICTION_AIR: float = 0.95
 var CHAIN_PULL: int = 105
+var STOMACH = null
 
 @export var powerup_time_length: int = 10
 
@@ -16,6 +17,9 @@ var chain_velocity := Vector2(0,0)
 
 func _ready() -> void:
 	self.powerup_timer.wait_time = self.powerup_time_length
+	for child in get_parent().get_children():
+		if child.name == "subview":
+			STOMACH = child.get_child(0)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -37,6 +41,7 @@ func _physics_process(_delta: float) -> void:
 	set_velocity(velocity)
 	set_up_direction(Vector2.UP)
 	move_and_slide()
+	STOMACH.impulse(-velocity*0.2)
 
 	velocity.y = clamp(velocity.y, -MAX_SPEED, MAX_SPEED)
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
