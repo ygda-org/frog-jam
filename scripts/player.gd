@@ -22,7 +22,10 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			tongue.shoot(self.get_local_mouse_position())
+			#tongue.shoot(self.get_local_mouse_position() - to_local(tongue.position))
+			tongue.shoot(tongue.get_local_mouse_position())
+			
+			#print(to_local(tongue.position))
 		else:
 			tongue.release()
 
@@ -31,7 +34,7 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += GRAVITY
 
 	if tongue.hooked:
-		chain_velocity = to_local(tongue.tip_position).normalized() * CHAIN_PULL
+		chain_velocity = tongue.to_local(tongue.tip_position).normalized() * CHAIN_PULL
 	else:
 		chain_velocity = Vector2(0,0)
 		

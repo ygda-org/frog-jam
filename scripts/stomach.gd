@@ -33,7 +33,7 @@ func add_creature(texture: Texture2D) -> void:
 	if len(FROGS) > 3:
 		remove_child.call_deferred(FROGS.pop_front())
 	
-	print(len(FROGS))
+	#print(len(FROGS))
 
 func impulse(impulse) -> void:
 	for frog in FROGS:
