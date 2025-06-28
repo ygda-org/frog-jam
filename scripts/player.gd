@@ -24,12 +24,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
-			#tongue.shoot(self.get_local_mouse_position() - to_local(tongue.position))
 			tongue.shoot(tongue.get_local_mouse_position())
-			
-			#print(to_local(tongue.position))
 		else:
-			tongue.release()
+			tongue.retract()
 
 
 func _physics_process(_delta: float) -> void:
