@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://d4ac5b740vh5i"]
+
+[ext_resource type="Script" uid="uid://bjxrp3ee2vqhf" path="res://scripts/water_body.gd" id="1_2xw6q"]
+
+[node name="WaterBody" type="Node2D"]
+script = ExtResource("1_2xw6q")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.458824, 0.666667, 1, 1)
