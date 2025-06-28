@@ -30,6 +30,7 @@ func _ready() -> void:
 	
 	highest_spawn = camera.global_position.y - spawn_margin
 	spawn_up_to(camera.global_position.y - spawn_margin)
+	
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
