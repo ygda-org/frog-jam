@@ -61,7 +61,7 @@ func spawn_layer_at(y_pos: float) -> void:
 	#spawn enemies
 	for i in enemies_per_layer:
 		var x = randi_range(-screen_width, screen_width)
-		#spawn enemies at Vector2(x, y_pos + randi_range(-spawn_height-margin, spawn_height_margin))
+		#spawn enemies at Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
 	
 	#spawn bubbles
 	for i in bubbles_per_layer:

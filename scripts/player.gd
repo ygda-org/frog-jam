@@ -62,6 +62,9 @@ func _physics_process(_delta: float) -> void:
 		
 	position.y = min(0.0, position.y)
 
+func enemy_collision(enemy: Variant):
+	print("Player collided with: " + str(enemy))
+
 func collect_frog(frog_data: FrogData) -> void:
 	STOMACH.add_creature(frog_data.texture)
 	
