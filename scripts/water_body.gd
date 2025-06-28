@@ -5,7 +5,7 @@ const WATER_SPRING = preload("res://scenes/water/water_spring.tscn")
 
 const SPRING_STIFFNESS : float = 0.015
 const DAMPENING : float = 0.03
-@export var SPRING_GAP_DIST : float = 100
+@export var SPRING_GAP_DIST : float = 10
 var VIEWPORT_SIZE
 
 @export var starting_y : float = 300
@@ -27,6 +27,8 @@ func _ready() -> void:
 		instance.position.x = x
 		add_child(instance)
 		springs.append(instance)
+	
+	apply_force(10, 100)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -40,9 +42,9 @@ func update_all_water(passes : int):
 	for i in range(0, len(springs)):
 		for j in range(passes):
 			if i > 0:
-				springs[i].velocity += springs[i - 1].velocity * 0.002
+				springs[i].velocity += (springs[i].velocity - springs[i - 1].velocity) * 0.002
 			if i < len(springs) - 1:
-				springs[i].velocity += springs[i + 1].velocity * 0.002
+				springs[i].velocity += (springs[i].velocity - springs[i + 1].velocity) * 0.002
 		springs[i].water_update(SPRING_STIFFNESS, DAMPENING)
 		springs[i].sine_sprite_offset((Time.get_unix_time_from_system() - start_time) * 2)
 

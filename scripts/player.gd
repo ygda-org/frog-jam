@@ -5,7 +5,7 @@ var JUMP_FORCE: int = 1550
 const MAX_GRAVITY: int = 60
 var GRAVITY: int = 60
 var MAX_SPEED: int = 2000
-var FRICTION_AIR: float = 0.95
+var FRICTION_AIR: float = 0.975
 var CHAIN_PULL: int = 105
 
 @export var powerup_time_length: int = 10
