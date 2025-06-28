@@ -2,24 +2,22 @@ class_name Player
 extends CharacterBody2D
 
 var JUMP_FORCE: int = 1550
+const MAX_GRAVITY: int = 60
 var GRAVITY: int = 60
 var MAX_SPEED: int = 2000
 var FRICTION_AIR: float = 0.95
 var CHAIN_PULL: int = 105
-var STOMACH = null
 
 @export var powerup_time_length: int = 10
 
 @onready var tongue: Tongue = $Tongue
 @onready var powerup_timer: Timer = $Timer
+@export var STOMACH: Stomach = null
 
 var chain_velocity := Vector2(0,0)
 
 func _ready() -> void:
 	self.powerup_timer.wait_time = self.powerup_time_length
-	for child in get_parent().get_children():
-		if child.name == "subview":
-			STOMACH = child.get_child(0)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -58,13 +56,16 @@ func _physics_process(_delta: float) -> void:
 		if velocity.y > 0:
 			velocity.y *= FRICTION_AIR
 
-func apply_powerup(powerup: FrogData.Powerups) -> void:
-	match powerup:
+func collect_frog(frog_data: FrogData) -> void:
+	STOMACH.add_creature(frog_data.texture)
+	
+	match frog_data.powerup:
 		FrogData.Powerups.Slowfall:
-			self.GRAVITY /= 2
+			self.GRAVITY = self.MAX_GRAVITY / 2
 			self.powerup_timer.timeout.connect(func():
-				self.GRAVITY *= 2
-				print("slowfall deactivated")
+				self.GRAVITY = self.MAX_GRAVITY
+				#print("slowfall deactivated")
 				)
+			self.powerup_timer.one_shot = true
 			self.powerup_timer.start()
-			print("slowfall activated")
+			#print("slowfall activated")

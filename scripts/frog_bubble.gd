@@ -7,5 +7,5 @@ func set_data(new_data: FrogData) -> void:
 	self.frog_data = new_data
 
 func _on_body_entered(body: Node2D) -> void:
-	(body as Player).apply_powerup(frog_data.powerup)
+	(body as Player).collect_frog(frog_data)
 	self.queue_free()

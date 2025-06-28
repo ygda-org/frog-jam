@@ -40,7 +40,6 @@ func _process(delta: float) -> void:
 	for i in get_tree().get_nodes_in_group("despawnable"):
 		if i.global_position.y > camera.global_position.y + get_viewport_rect().size.y * 0.5:
 			i.queue_free()
-			print("deleting node")
 
 func spawn_up_to(target: float) -> void:
 	#spawn layers between spawn_interval from highest_spawn down to target
