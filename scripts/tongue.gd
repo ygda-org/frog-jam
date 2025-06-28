@@ -4,6 +4,8 @@ extends Node2D
 @onready var tongue_middle_sprite: Sprite2D = $"Tongue Middle"
 @onready var tongue_tip: CharacterBody2D = $"Tongue Tip"
 
+@onready var frog: CharacterBody2D = get_parent()
+
 var direction: Vector2 = Vector2.ZERO
 var tip_position: Vector2 = Vector2.ZERO
 
@@ -13,6 +15,7 @@ var hooked: bool = false
 var hooked_creature = null
 
 const SPEED: int = 50
+
 
 func shoot(dir: Vector2) -> void:
 	self.direction = dir.normalized()
@@ -38,6 +41,7 @@ func _process(_delta: float) -> void:
 	
 	self.tongue_middle_sprite.position = tip_loc
 	self.tongue_middle_sprite.region_rect.size.y = tip_loc.length()
+	
 
 func _physics_process(delta: float) -> void:
 	self.tongue_tip.global_position = self.tip_position
