@@ -13,6 +13,7 @@ var CHAIN_PULL: int = 105
 @onready var tongue: Tongue = $Tongue
 @onready var powerup_timer: Timer = $Timer
 @export var STOMACH: Stomach = null
+@export var HUD: Control = null
 
 var chain_velocity := Vector2(0,0)
 
@@ -49,7 +50,11 @@ func _physics_process(_delta: float) -> void:
 		collision.get_collider().queue_free()
 	
 	STOMACH.impulse(-velocity*0.2)
-
+	
+	var unit_scale = 0.01
+	HUD.height_label.text = str(-(int((position.y-30)*unit_scale))) + " m"
+	HUD.speed_label.text = str(int(sqrt(velocity.x**2+velocity.y**2)*unit_scale)) + " m/s"
+	
 	velocity.y = clamp(velocity.y, -MAX_SPEED, MAX_SPEED)
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
 
