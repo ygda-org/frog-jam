@@ -8,6 +8,9 @@ var MAX_SPEED: int = 2000
 var FRICTION_AIR: float = 0.975
 var CHAIN_PULL: int = 105
 
+var health = 100
+var invincible = false
+
 @export var powerup_time_length: int = 10
 
 @onready var tongue: Tongue = $Tongue
@@ -94,3 +97,16 @@ func collect_frog(frog_data: FrogData) -> void:
 				)
 			self.powerup_timer.one_shot = true
 			self.powerup_timer.start()
+
+func hit(dmg: int):
+	if invincible:
+		return
+	else:
+		invincible = true
+		health -= dmg
+		HUD.get_node("MarginContainer/HBoxContainer/Health Label").text = str(health)
+		$IFrames.start()
+
+
+func _on_i_frames_timeout():
+	invincible = false

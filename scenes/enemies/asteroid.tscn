@@ -5,7 +5,9 @@
 [ext_resource type="Texture2D" uid="uid://dkefc64id3af3" path="res://assets/images/Asteroid 4.png" id="3_08eb2"]
 
 [node name="Asteroid" type="CharacterBody2D"]
+scale = Vector2(0.3, 0.3)
 collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_08eb2")
 
 [node name="BaseEnemyComponent" parent="." instance=ExtResource("2_2h6hj")]
