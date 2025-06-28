@@ -2,11 +2,11 @@ extends Node2D
 
 
 @export var spawn_margin: int = 200
-@export var spawn_interval: int = 100
-@export var creatures_per_layer: int = 5
+@export var spawn_interval: int = 500
+@export var creatures_per_layer: int = 2
 @export var enemies_per_layer: int = 1
 @export var bubbles_per_layer: int = 1
-@export var spawn_height_margin: int = 10
+@export var spawn_height_margin: int = spawn_interval / 2
 
 @onready var camera: Camera2D = $Camera2D
 
@@ -54,6 +54,9 @@ func spawn_layer_at(y_pos: float) -> void:
 	# spawn creatures
 	for i in creatures_per_layer:
 		var x = randi_range(-screen_width, screen_width)
+		var current_creature = load("res://scenes/test_creature.tscn").instantiate() # currently thinking array of path names to do random creatures
+		current_creature.position = Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
+		add_child(current_creature)
 		# spawn creature at Vector2(x, y_pos + randi_range(-spawn_height-margin, spawn_height_margin))
 	
 	#spawn enemies

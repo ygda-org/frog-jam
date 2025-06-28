@@ -34,39 +34,6 @@ player = NodePath("../Player")
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
 
-[node name="Test Block" type="StaticBody2D" parent="."]
-position = Vector2(-312, -232)
-
-[node name="Sprite2D" type="Sprite2D" parent="Test Block"]
-position = Vector2(0, -2)
-texture = ExtResource("2_sugp2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test Block"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="Test Block2" type="StaticBody2D" parent="."]
-position = Vector2(-624, -464)
-
-[node name="Sprite2D" type="Sprite2D" parent="Test Block2"]
-position = Vector2(0, -2)
-texture = ExtResource("2_sugp2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test Block2"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_sugp2")
-
-[node name="Test Block3" type="StaticBody2D" parent="."]
-position = Vector2(278, -648)
-
-[node name="Sprite2D" type="Sprite2D" parent="Test Block3"]
-position = Vector2(0, -2)
-texture = ExtResource("2_sugp2")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Test Block3"]
-position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_sugp2")
-
 [node name="Test Block4" type="StaticBody2D" parent="."]
 position = Vector2(0, 232)
 
