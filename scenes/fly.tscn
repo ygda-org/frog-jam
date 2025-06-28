@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://daayd3mbj55r2"]
+
+[ext_resource type="Texture2D" uid="uid://dj8rjbpefhblg" path="res://assets/images/fly_spreadsheet.png" id="1_djddo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xr3pu"]
+atlas = ExtResource("1_djddo")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2lkvx"]
+atlas = ExtResource("1_djddo")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgyng"]
+atlas = ExtResource("1_djddo")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qovp"]
+atlas = ExtResource("1_djddo")
+region = Rect2(1200, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eyt7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xr3pu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2lkvx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgyng")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0qovp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_eswn2"]
+radius = 95.3363
+
+[node name="Fly" type="StaticBody2D"]
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_eyt7k")
+autoplay = "default"
+frame_progress = 0.859129
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 36)
+shape = SubResource("CircleShape2D_eswn2")

@@ -30,6 +30,7 @@ func _ready() -> void:
 	
 	highest_spawn = camera.global_position.y - spawn_margin
 	spawn_up_to(camera.global_position.y - spawn_margin)
+	
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
@@ -53,7 +54,7 @@ func spawn_layer_at(y_pos: float) -> void:
 	# spawn creatures
 	for i in creatures_per_layer:
 		var x = randi_range(-screen_width, screen_width)
-		var current_creature = load("res://scenes/test_creature.tscn").instantiate() # currently thinking array of path names to do random creatures
+		var current_creature = load("res://scenes/fly.tscn").instantiate() # currently thinking array of path names to do random creatures
 		current_creature.position = Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
 		add_child(current_creature)
 		# spawn creature at Vector2(x, y_pos + randi_range(-spawn_height-margin, spawn_height_margin))
