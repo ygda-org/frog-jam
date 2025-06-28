@@ -8,5 +8,7 @@ func set_data(new_data: FrogData) -> void:
 	$FrogSprite.texture = new_data.texture
 
 func _on_body_entered(body: Node2D) -> void:
+	if body.name != "Player":
+		return
 	(body as Player).collect_frog(frog_data)
 	self.queue_free()
