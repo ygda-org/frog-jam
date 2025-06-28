@@ -49,6 +49,7 @@ func spawn_up_to(target: float) -> void:
 
 func spawn_layer_at(y_pos: float) -> void:
 	var screen_width: float = get_viewport_rect().size.x
+	$ClodSpawner.spawn_clod(y_pos)
 	
 	# spawn creatures
 	for i in creatures_per_layer:
