@@ -10,6 +10,8 @@ var tip_position: Vector2 = Vector2.ZERO
 var flying: bool = false
 var hooked: bool = false
 
+var hooked_creature = null
+
 const SPEED: int = 50
 
 func shoot(dir: Vector2) -> void:
@@ -20,6 +22,7 @@ func shoot(dir: Vector2) -> void:
 func release() -> void:
 	self.flying = false
 	self.hooked = false
+	self.hooked_creature = null
 
 func _process(_delta: float) -> void:
 	self.visible = self.flying or self.hooked
@@ -39,8 +42,14 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	self.tongue_tip.global_position = self.tip_position
 	
-	if flying and self.tongue_tip.move_and_collide(direction * SPEED):
-		self.hooked = true
-		self.flying = false
+	#if flying and self.tongue_tip.move_and_collide(direction * SPEED):
+		#self.hooked = true
+		#self.flying = false
+	if flying:
+		var collision: KinematicCollision2D = self.tongue_tip.move_and_collide(direction * SPEED)
+		if collision:
+			self.hooked_creature = collision.get_collider()
+			self.hooked = true
+			self.flying = false
 	
 	self.tip_position = self.tongue_tip.global_position
