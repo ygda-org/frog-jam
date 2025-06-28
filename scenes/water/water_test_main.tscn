@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhsuj6p2ru2mj"]
+
+[ext_resource type="PackedScene" uid="uid://d4ac5b740vh5i" path="res://scenes/water/water_body.tscn" id="1_ilewt"]
+
+[node name="WaterTestMain" type="Node2D"]
+
+[node name="WaterBody" parent="." instance=ExtResource("1_ilewt")]
+SPRING_GAP_DIST = 30.0

@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1x7t2imfa4yb"]
+
+[ext_resource type="Script" uid="uid://dp8nusk3a14fp" path="res://scripts/water_spring.gd" id="1_vl1gr"]
+
+[node name="WaterSpring" type="Node2D"]
+script = ExtResource("1_vl1gr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
