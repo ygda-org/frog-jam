@@ -64,6 +64,7 @@ script = ExtResource("1_qhqgy")
 [node name="Tongue" parent="." instance=ExtResource("1_g2els")]
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.215, 0.215)
 sprite_frames = SubResource("SpriteFrames_y4r1p")
 autoplay = "default"
 

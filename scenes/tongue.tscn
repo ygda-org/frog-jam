@@ -12,10 +12,9 @@ script = ExtResource("1_kcni0")
 
 [node name="Tongue Middle" type="Sprite2D" parent="."]
 texture_repeat = 2
-position = Vector2(-34, 7)
 texture = ExtResource("2_kcni0")
 centered = false
-offset = Vector2(-8, 14)
+offset = Vector2(-42, 14)
 region_enabled = true
 region_rect = Rect2(208, 0, 84, 360)
 
@@ -23,6 +22,7 @@ region_rect = Rect2(208, 0, 84, 360)
 collision_layer = 0
 
 [node name="Tip Sprite" type="Sprite2D" parent="Tongue Tip"]
+position = Vector2(-34, 0)
 texture = ExtResource("3_8i22f")
 offset = Vector2(34, 8)
 
