@@ -19,5 +19,3 @@ disabled = true
 [node name="Collision2" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(97, -614, 148, -639, 203, -639, 255, -617, 288, -585, 317, -530, 315, -467, 285, -417, 228, -373, 154, -365, 75, -403, 41, -473, 47, -547)
 disabled = true
-
-[node name="Camera2D" type="Camera2D" parent="."]

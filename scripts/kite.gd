@@ -6,8 +6,22 @@ var offset_position : Vector2
 var shake_radius = 5
 @onready var start_time = Time.get_unix_time_from_system()
 
+
+var random = RandomNumberGenerator.new()
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var chosen = random.randi_range(0, 1)
+	if chosen == 0:
+		$Sprite2D.texture = load("res://assets/images/Kite 1.PNG")
+		scale = Vector2(0.5, 0.5)
+		$Collision1.disabled = false
+	elif chosen == 1:
+		$Sprite2D.texture = load("res://assets/images/Kite 2.PNG")
+		scale = Vector2(0.5, 0.5)
+		$Collision2.disabled = false
+	
+	
 	origin_position = position
 	offset_position = origin_position
 
