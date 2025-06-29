@@ -1,0 +1,31 @@
+extends Node2D
+
+@export var sound_effect_settings : Array[SFXSettings]
+
+var sound_effect_dict : Dictionary[SFXSettings.SOUND_EFFECT_LABEL, SFXSettings]
+
+var rng = RandomNumberGenerator.new()
+
+func _ready() -> void:
+	for setting : SFXSettings in sound_effect_settings:
+		sound_effect_dict[setting.label] = setting
+
+func _on_audio_finished(source : AudioStreamPlayer):
+	pass
+
+func create_audio(type : SFXSettings.SOUND_EFFECT_LABEL):
+	var audioplayer : AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audioplayer)
+	var sound_effect_setting = sound_effect_dict[type]
+	audioplayer.stream = sound_effect_setting.stream
+	audioplayer.volume_db = sound_effect_setting.volume
+	audioplayer.pitch_scale = sound_effect_setting.pitch
+	audioplayer.finished.connect(audioplayer.queue_free)
+	audioplayer.name = str(sound_effect_setting.label)
+	audioplayer.finished.connect(_on_audio_finished.bind(audioplayer))
+	audioplayer.play()
+	#GlobalLog.log("Playing: " + str(sound_effect_setting.label))
+
+func clear_all_audio():
+	for child in get_children():
+		child.queue_free()
