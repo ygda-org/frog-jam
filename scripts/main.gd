@@ -3,7 +3,7 @@ extends Node2D
 
 @export var spawn_margin: int = 1500
 @export var spawn_interval: int = 750
-@export var creatures_per_layer: int = 2
+@export var creatures_per_layer: int = 4
 @export var enemies_per_layer: int = 1
 @export var bubbles_per_layer: int = 1
 @export var spawn_height_margin: int = spawn_interval / 2
@@ -60,7 +60,7 @@ func spawn_up_to(target: float) -> void:
 		spawn_layer_at(highest_spawn)
 
 func spawn_layer_at(y_pos: float) -> void:
-	var screen_width: float = get_viewport_rect().size.x
+	var screen_width: float = get_viewport().get_visible_rect().size.x * 3
 
 	var height_meters: float = (y_pos - 30) * -0.01
 	
