@@ -89,7 +89,8 @@ func _physics_process(delta: float) -> void:
 			print("ERROR WOULD OCCUR")
 			hooked = false
 			return
-		tongue_tip.global_position.x += self.hooked_creature.velocity.x * delta
+		if self.hooked_creature is CharacterBody2D:
+			tongue_tip.global_position.x += self.hooked_creature.velocity.x * delta
 	self.tip_position = self.tongue_tip.global_position
 
 

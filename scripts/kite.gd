@@ -4,8 +4,8 @@ class_name Kite
 var origin_position : Vector2
 var offset_position : Vector2
 var shake_radius = 5
-@onready var start_time = Time.get_unix_time_from_system()
 
+@onready var start_time = Time.get_unix_time_from_system()
 
 var random = RandomNumberGenerator.new()
 
@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 	offset_position.x = origin_position.x + cos(elapsed_time) * shake_radius
 	offset_position.y = origin_position.y + sin(elapsed_time) * shake_radius
 	position = offset_position
+	move_and_slide()
 
 func _to_string() -> String:
 	return "KITE-" + str(position)

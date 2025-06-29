@@ -1,0 +1,48 @@
+[gd_scene load_steps=6 format=3 uid="uid://wh8o3unm3dfr"]
+
+[ext_resource type="Script" uid="uid://b6x0qx7mrssws" path="res://scripts/start_menu.gd" id="1_fcv5n"]
+[ext_resource type="Texture2D" uid="uid://c1ib6hu2l212y" path="res://assets/images/start/art.PNG" id="1_h61rw"]
+[ext_resource type="Texture2D" uid="uid://bg26ioljgpiqk" path="res://assets/images/start/the revenge of.PNG" id="2_fcv5n"]
+[ext_resource type="Texture2D" uid="uid://vkxjgldib3gs" path="res://assets/images/start/glass pebble frog toad.PNG" id="3_4v6gu"]
+[ext_resource type="Texture2D" uid="uid://bo00sfc485w1e" path="res://assets/images/start/play.PNG" id="4_nxjfj"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fcv5n")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+scale = Vector2(0.959473, 0.430677)
+offset = Vector2(0, -8)
+zoom = Vector2(0.49, 0.4)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-1194, -844)
+
+[node name="TextureRect" type="TextureRect" parent="Node2D"]
+offset_right = 2388.0
+offset_bottom = 1668.0
+texture = ExtResource("1_h61rw")
+
+[node name="TextureRect2" type="TextureRect" parent="Node2D"]
+offset_right = 2388.0
+offset_bottom = 1668.0
+texture = ExtResource("2_fcv5n")
+
+[node name="TextureRect3" type="TextureRect" parent="Node2D"]
+offset_right = 2388.0
+offset_bottom = 1668.0
+texture = ExtResource("3_4v6gu")
+
+[node name="TextureRect4" type="TextureRect" parent="Node2D"]
+offset_right = 2388.0
+offset_bottom = 1668.0
+texture = ExtResource("4_nxjfj")
+
+[node name="Button" type="Button" parent="Node2D"]
+offset_left = 149.0
+offset_top = 1098.0
+offset_right = 967.0
+offset_bottom = 1369.0
+
+[connection signal="pressed" from="Node2D/Button" to="." method="_on_button_pressed"]
