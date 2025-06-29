@@ -4,7 +4,7 @@ extends Parallax2D
 @onready var black_rect := $BlackRect
 var camera : Camera2D
 
-const TRANSITION_POINT : int = 200
+const TRANSITION_POINT : int = 600
 const TRANSITION_AREA_HEIGHT : int = 100
 
 var rng := RandomNumberGenerator.new()
