@@ -8,7 +8,7 @@
 [ext_resource type="Resource" uid="uid://bwfgmons2un3v" path="res://assets/resources/frog_resources/slowfall_frog.tres" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://btd1ic7rl6olk" path="res://scenes/stomach.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cs2v2aikg2lsg" path="res://ui/hud.tscn" id="7_tipki"]
-[ext_resource type="PackedScene" path="res://scenes/Background_Spawner.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://dl1oqaw7igiwu" path="res://scenes/Background_Spawner.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://d4ac5b740vh5i" path="res://scenes/water/water_body.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://bv0gtd7gib6qt" path="res://ui/death_screen.tscn" id="11_ya4ey"]
 
