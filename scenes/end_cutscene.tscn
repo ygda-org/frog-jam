@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://bgaxaihifk7yw"]
+
+[ext_resource type="Texture2D" uid="uid://npiqqvnnh6ls" path="res://assets/images/end/scene_2-2-1.png" id="1_r6d7t"]
+[ext_resource type="Texture2D" uid="uid://bxk7tsnaw6ron" path="res://assets/images/end/scene_2-2-2.png" id="2_rbbr3"]
+[ext_resource type="Texture2D" uid="uid://xjnnsdmet1us" path="res://assets/images/end/scene_2-2-3.png" id="3_ib2ml"]
+[ext_resource type="Texture2D" uid="uid://lfx4or7ok68e" path="res://assets/images/end/scene_2-2-4.png" id="4_idlbc"]
+[ext_resource type="Texture2D" uid="uid://cxhjs0cmqpobn" path="res://assets/images/end/scene_2-2-5.png" id="5_bjsxx"]
+[ext_resource type="Texture2D" uid="uid://darix8mgi4nlr" path="res://assets/images/end/scene_2-2-6.png" id="6_l4mvn"]
+[ext_resource type="Texture2D" uid="uid://bhdkmwgroorj6" path="res://assets/images/end/scene_2-2-7.png" id="7_yq8hv"]
+[ext_resource type="Texture2D" uid="uid://bwacl4rawyi8" path="res://assets/images/end/scene_2-2-8.png" id="8_wf2jl"]
+[ext_resource type="Texture2D" uid="uid://blm2v5o431o1c" path="res://assets/images/end/scene_2-2-9.png" id="9_yid4j"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7aey5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_r6d7t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_rbbr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ib2ml")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_idlbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bjsxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l4mvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yq8hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wf2jl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_yid4j")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="EndCutscene" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7aey5")
+autoplay = "default"
+frame = 8
+frame_progress = 1.0
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.4, 0.4)

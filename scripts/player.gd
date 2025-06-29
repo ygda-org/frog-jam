@@ -66,6 +66,8 @@ func _physics_process(_delta: float) -> void:
 			tongue.release()
 		call_deferred("kill", collision.get_collider())
 		scale += Vector2(0.03, 0.03)
+		if collision.get_collider().name == "Sun":
+			get_parent().win()
 	
 	STOMACH.impulse(-velocity*0.2)
 	
