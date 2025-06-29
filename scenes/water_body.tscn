@@ -16,6 +16,8 @@ script = ExtResource("1_i3kw6")
 visible = false
 
 [node name="Water Polygon" type="Polygon2D" parent="."]
+z_index = 100
+z_as_relative = false
 material = SubResource("ShaderMaterial_ugtve")
 color = Color(1.92523e-07, 0.404875, 0.408589, 1)
 
