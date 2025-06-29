@@ -2,25 +2,28 @@
 
 [ext_resource type="Texture2D" uid="uid://dj8rjbpefhblg" path="res://assets/images/fly_spreadsheet.png" id="1_djddo"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_djddo"]
+atlas = ExtResource("1_djddo")
+region = Rect2(0, 0, 600, 400)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_xr3pu"]
 atlas = ExtResource("1_djddo")
-region = Rect2(0, 0, 400, 400)
+region = Rect2(600, 0, 600, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2lkvx"]
 atlas = ExtResource("1_djddo")
-region = Rect2(400, 0, 400, 400)
+region = Rect2(1200, 0, 600, 400)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sgyng"]
 atlas = ExtResource("1_djddo")
-region = Rect2(800, 0, 400, 400)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0qovp"]
-atlas = ExtResource("1_djddo")
-region = Rect2(1200, 0, 400, 400)
+region = Rect2(1800, 0, 600, 400)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_eyt7k"]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djddo")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xr3pu")
 }, {
@@ -29,9 +32,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sgyng")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_0qovp")
 }],
 "loop": true,
 "name": &"default",

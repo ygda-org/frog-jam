@@ -1,11 +1,9 @@
-[gd_scene load_steps=15 format=3 uid="uid://dqdho0tsm5oaw"]
+[gd_scene load_steps=13 format=3 uid="uid://dqdho0tsm5oaw"]
 
 [ext_resource type="PackedScene" uid="uid://c6uk1avdiasqd" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dfnmfuy47683b" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://dr2tdfuug7fjk" path="res://scripts/camera.gd" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://c7qyjf71va1hr" path="res://scenes/frog_bubble.tscn" id="4_jyhfs"]
 [ext_resource type="Shader" uid="uid://b22bvp1175fek" path="res://scripts/space.gdshader" id="5_choun"]
-[ext_resource type="Resource" uid="uid://bwfgmons2un3v" path="res://assets/resources/frog_resources/slowfall_frog.tres" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://btd1ic7rl6olk" path="res://scenes/stomach.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cs2v2aikg2lsg" path="res://ui/hud.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" uid="uid://dl1oqaw7igiwu" path="res://scenes/Background_Spawner.tscn" id="8_tipki"]
@@ -54,10 +52,6 @@ offset_top = -6312.0
 offset_right = 10656.0
 offset_bottom = 7094.0
 color = Color(0, 0, 0, 0)
-
-[node name="FrogBubble" parent="." instance=ExtResource("4_jyhfs")]
-position = Vector2(183, -380)
-frog_data = ExtResource("5_tbgi4")
 
 [node name="subview" type="SubViewport" parent="."]
 transparent_bg = true

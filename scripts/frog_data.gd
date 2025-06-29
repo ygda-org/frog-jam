@@ -4,6 +4,7 @@ extends Resource
 enum Powerups {
 	Slowfall,
 	Dart,
+	Rocket,
 }
 
 @export var texture: Texture2D

@@ -16,7 +16,8 @@ var invincible = false
 @export var powerup_time_length: int = 10
 
 @onready var tongue: Tongue = $Tongue
-@onready var powerup_timer: Timer = $Timer
+@onready var slowfall_timer: Timer = $SlowfallTimer
+@onready var dart_timer: Timer = $DartTimer
 @export var STOMACH: Stomach = null
 @export var HUD: HUD = null
 
@@ -25,7 +26,8 @@ var chain_velocity := Vector2(0,0)
 var poisonous : bool = false
 
 func _ready() -> void:
-	self.powerup_timer.wait_time = self.powerup_time_length
+	self.slowfall_timer.wait_time = self.powerup_time_length
+	self.dart_timer.wait_time = self.powerup_time_length
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -70,6 +72,7 @@ func _physics_process(_delta: float) -> void:
 		velocity.y *= FRICTION_AIR
 		
 	position.y = min(0.0, position.y)
+	
 
 func enemy_collision(enemy: Variant):
 	if poisonous:
@@ -84,21 +87,23 @@ func collect_frog(frog_data: FrogData) -> void:
 		FrogData.Powerups.Slowfall:
 			#print("Slow fall attained!")
 			self.GRAVITY = self.MAX_GRAVITY / 2
-			self.powerup_timer.timeout.connect(func():
+			self.slowfall_timer.timeout.connect(func():
 				self.GRAVITY = self.MAX_GRAVITY
 				#print("slowfall deactivated")
 				)
-			self.powerup_timer.one_shot = true
-			self.powerup_timer.start()
+			self.slowfall_timer.one_shot = true
+			self.slowfall_timer.start()
 			#print("slowfall activated")
 		FrogData.Powerups.Dart:
 			#print("Poison attained!")
 			poisonous = true
-			self.powerup_timer.timeout.connect(func():
+			self.dart_timer.timeout.connect(func():
 				poisonous = false
 				)
-			self.powerup_timer.one_shot = true
-			self.powerup_timer.start()
+			self.dart_timer.one_shot = true
+			self.dart_timer.start()
+		FrogData.Powerups.Rocket:
+			pass
 
 func hit(dmg: int):
 	if not invincible:

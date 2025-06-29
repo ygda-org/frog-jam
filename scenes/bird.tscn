@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://cy8twfjat8r5d"]
+
+[ext_resource type="Script" uid="uid://c0pchppt5if0d" path="res://scenes/bird.gd" id="1_3po83"]
+[ext_resource type="Texture2D" uid="uid://pk2bg2yo63fj" path="res://assets/images/bird_spreadsheet.png" id="2_hq4t0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twsrt"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(0, 0, 600, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7mtg"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(600, 0, 600, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bdh3x"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(1200, 0, 600, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jggmu"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(1800, 0, 600, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hrcfq"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(2400, 0, 600, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ehebh"]
+atlas = ExtResource("2_hq4t0")
+region = Rect2(3000, 0, 600, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qavic"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twsrt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7mtg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bdh3x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jggmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hrcfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ehebh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bird" type="CharacterBody2D"]
+script = ExtResource("1_3po83")
+
+[node name="Anim" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_qavic")
+frame = 2
+frame_progress = 0.758116
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-23, -115, -24, -108, -23, -81, -24, -25, -12, -12, 47, -2, 113, 57, 174, 85, 147, 108, 123, 102, 126, 117, 112, 126, 77, 117, 59, 100, 46, 87, 25, 102, 4, 113, -22, 119, -40, 122, -59, 119, -93, 113, -109, 103, -120, 88, -130, 71, -137, 54, -141, 40, -153, 22, -165, 10, -173, -9, -175, -34, -167, -54, -156, -68, -139, -78, -118, -85, -108, -88, -77, -94, -60, -100, -39, -109)

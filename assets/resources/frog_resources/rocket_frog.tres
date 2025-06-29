@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="FrogData" load_steps=3 format=3 uid="uid://bjoq0vbeg2yfl"]
+
+[ext_resource type="Script" uid="uid://54ym1gykbbgq" path="res://scripts/frog_data.gd" id="1_sn0p4"]
+[ext_resource type="Texture2D" uid="uid://c48vwbd0gp1p0" path="res://assets/images/rocket.PNG" id="2_q78gp"]
+
+[resource]
+script = ExtResource("1_sn0p4")
+texture = ExtResource("2_q78gp")
+powerup = 2
+metadata/_custom_type_script = "uid://54ym1gykbbgq"

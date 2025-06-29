@@ -74,10 +74,13 @@ autoplay = "default"
 position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_dqkch")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="SlowfallTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="IFrames" type="Timer" parent="."]
+one_shot = true
+
+[node name="DartTimer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="timeout" from="IFrames" to="." method="_on_i_frames_timeout"]
