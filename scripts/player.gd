@@ -29,6 +29,7 @@ var poisonous : bool = false
 func _ready() -> void:
 	self.slowfall_timer.wait_time = self.powerup_time_length
 	self.dart_timer.wait_time = self.powerup_time_length
+	self.RocketTimer.wait_time = self.powerup_time_length
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -55,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 	if collision:
 		if collision.get_collider() == tongue.hooked_creature:
 			tongue.release()
-		collision.get_collider().queue_free()
+		call_deferred(collision.get_collider().queue_free())
 		scale += Vector2(0.03, 0.03)
 	
 	STOMACH.impulse(-velocity*0.2)
