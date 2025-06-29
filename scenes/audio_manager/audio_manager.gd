@@ -6,12 +6,22 @@ var sound_effect_dict : Dictionary[SFXSettings.SOUND_EFFECT_LABEL, SFXSettings]
 
 var rng = RandomNumberGenerator.new()
 
+var playing_background_music = false
+
 func _ready() -> void:
 	for setting : SFXSettings in sound_effect_settings:
 		sound_effect_dict[setting.label] = setting
 
+func _process(delta: float) -> void:
+	if playing_background_music:
+		return
+	
+	create_audio(SFXSettings.SOUND_EFFECT_LABEL.MainGameSong01)
+	playing_background_music = true
+
 func _on_audio_finished(source : AudioStreamPlayer):
-	pass
+	if int(source.name) <= 0:
+		playing_background_music = false
 
 func create_audio(type : SFXSettings.SOUND_EFFECT_LABEL):
 	var audioplayer : AudioStreamPlayer = AudioStreamPlayer.new()
