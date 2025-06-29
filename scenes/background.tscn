@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://3aiq6pjsnudw"]
+[gd_scene load_steps=3 format=3 uid="uid://dkxyviqo8s2rs"]
 
-[ext_resource type="Script" uid="uid://co21pudm57y81" path="res://scripts/background.gd" id="1_bkp1e"]
+[ext_resource type="Script" path="res://scripts/background.gd" id="1_bkp1e"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ya4ey"]
 

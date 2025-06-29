@@ -9,7 +9,6 @@ extends Node2D
 @export var spawn_height_margin: int = spawn_interval / 2
 
 @onready var camera: Camera2D = $Camera2D
-@onready var background: ColorRect = $Camera2D/ColorRect2
 
 @onready var death_screen: DeathScreen = $"CanvasLayer/Death Screen"
 

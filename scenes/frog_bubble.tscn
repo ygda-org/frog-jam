@@ -1,16 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://c7qyjf71va1hr"]
+[gd_scene load_steps=7 format=3 uid="uid://c7qyjf71va1hr"]
 
 [ext_resource type="Script" uid="uid://cytlje5tgxifk" path="res://scripts/frog_bubble.gd" id="1_r2503"]
 [ext_resource type="Texture2D" uid="uid://crp6xdacbu1pv" path="res://assets/images/flying.PNG" id="2_r2503"]
 [ext_resource type="Texture2D" uid="uid://dl5v6ev3msen1" path="res://assets/images/bubble.png" id="3_on66f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vmryt"]
-radius = 161.028
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_on66f"]
 
-[node name="FrogBubble" type="Area2D" groups=["despawnable"]]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vmryt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vmryt"]
+radius = 166.0
+
+[node name="FrogBubble" type="CharacterBody2D" groups=["despawnable"]]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_r2503")
+noise_x = SubResource("FastNoiseLite_on66f")
+noise_y = SubResource("FastNoiseLite_vmryt")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_vmryt")
 
 [node name="FrogSprite" type="Sprite2D" parent="."]
 scale = Vector2(0.36, 0.36)
@@ -19,7 +32,4 @@ texture = ExtResource("2_r2503")
 [node name="Bubble" type="Sprite2D" parent="."]
 texture = ExtResource("3_on66f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_vmryt")
-
-[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D" to="." method="_on_body_entered"]
