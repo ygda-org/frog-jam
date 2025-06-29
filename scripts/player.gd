@@ -30,6 +30,10 @@ func _ready() -> void:
 	self.slowfall_timer.wait_time = self.powerup_time_length
 	self.dart_timer.wait_time = self.powerup_time_length
 	self.rocket_timer.wait_time = self.powerup_time_length
+	
+	set_deferred("HUD.rocket.max_value", powerup_time_length)
+	set_deferred("HUD.dart.max_value", powerup_time_length)
+	set_deferred("HUD.slowfall.max_value", powerup_time_length)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -68,6 +72,9 @@ func _physics_process(_delta: float) -> void:
 	var unit_scale = 0.01
 	HUD.height_label.text = str(-(int((position.y-30)*unit_scale))) + " m"
 	HUD.speed_label.text = str(int(sqrt(velocity.x**2+velocity.y**2)*unit_scale)) + " m/s"
+	HUD.rocket.value = rocket_timer.time_left
+	HUD.dart.value = dart_timer.time_left
+	HUD.slowfall.value = slowfall_timer.time_left
 	
 	velocity.y = clamp(velocity.y, -MAX_SPEED, MAX_SPEED)
 	velocity.x = clamp(velocity.x, -MAX_SPEED, MAX_SPEED)
@@ -93,10 +100,8 @@ func collect_frog(frog_data: FrogData) -> void:
 	match frog_data.powerup:
 		FrogData.Powerups.Slowfall:
 			#print("Slow fall attained!")
-			HUD.slowfall.color = Color(0, 1, 0)
 			self.GRAVITY = self.MAX_GRAVITY / 2
 			self.slowfall_timer.timeout.connect(func():
-				HUD.rocket.color = Color(1, 0, 0)
 				self.GRAVITY = self.MAX_GRAVITY
 				#print("slowfall deactivated")
 				)
@@ -105,19 +110,15 @@ func collect_frog(frog_data: FrogData) -> void:
 			#print("slowfall activated")
 		FrogData.Powerups.Dart:
 			#print("Poison attained!")
-			HUD.dart.color = Color(0, 1, 0)
 			poisonous = true
 			self.dart_timer.timeout.connect(func():
-				HUD.rocket.color = Color(1, 0, 0)
 				poisonous = false
 				)
 			self.dart_timer.one_shot = true
 			self.dart_timer.start()
 		FrogData.Powerups.Rocket:
-			HUD.rocket.color = Color(0, 1, 0)
 			tongue.SPEED = 150
 			self.rocket_timer.timeout.connect(func():
-				HUD.rocket.color = Color(1, 0, 0)
 				tongue.SPEED = 50)
 			self.rocket_timer.one_shot = true
 			self.rocket_timer.start()

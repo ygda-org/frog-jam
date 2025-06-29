@@ -77,10 +77,11 @@ layout_mode = 2
 texture = ExtResource("3_en2x2")
 expand_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer1"]
+[node name="ColorRect" type="ProgressBar" parent="MarginContainer3/HBoxContainer/VBoxContainer1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(1, 0, 0, 1)
+max_value = 3.0
+show_percentage = false
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer3/HBoxContainer"]
 layout_mode = 2
@@ -90,10 +91,11 @@ layout_mode = 2
 texture = ExtResource("4_1v5rv")
 expand_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer2"]
+[node name="ColorRect" type="ProgressBar" parent="MarginContainer3/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(1, 0, 0, 1)
+max_value = 3.0
+show_percentage = false
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer3/HBoxContainer"]
 layout_mode = 2
@@ -103,7 +105,8 @@ layout_mode = 2
 texture = ExtResource("5_q43x7")
 expand_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer3"]
+[node name="ColorRect" type="ProgressBar" parent="MarginContainer3/HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(1, 0, 0, 1)
+max_value = 3.0
+show_percentage = false
