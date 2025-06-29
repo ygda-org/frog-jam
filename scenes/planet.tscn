@@ -1,16 +1,16 @@
 [gd_scene load_steps=4 format=3 uid="uid://dmaat7jf1k87g"]
 
-[ext_resource type="Texture2D" uid="uid://bj67ayqtvecn5" path="res://icon.svg" id="1_cktii"]
 [ext_resource type="Script" uid="uid://sp1srweutmup" path="res://scripts/planet.gd" id="1_h8ms6"]
+[ext_resource type="Texture2D" uid="uid://b420ld2ag40my" path="res://assets/images/planet.png" id="2_h8ms6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_h8ms6"]
-radius = 80.0562
+radius = 124.036
 
 [node name="Planet" type="StaticBody2D"]
 script = ExtResource("1_h8ms6")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cktii")
+texture = ExtResource("2_h8ms6")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_h8ms6")

@@ -52,6 +52,7 @@ text = "0 m"
 horizontal_alignment = 1
 
 [node name="Speed Label" type="Label" parent="MarginContainer2/VBoxContainer"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "0 m/s"
