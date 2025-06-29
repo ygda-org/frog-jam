@@ -11,6 +11,8 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 @onready var background: ColorRect = $Camera2D/ColorRect2
 
+@onready var death_screen: DeathScreen = $"CanvasLayer/Death Screen"
+
 var FROG_BUBBLE_SCENE: PackedScene = preload("res://scenes/frog_bubble.tscn")
 
 var highest_spawn: float = 0.0
@@ -31,6 +33,8 @@ func _ready() -> void:
 	
 	highest_spawn = camera.global_position.y - spawn_margin / 3
 	spawn_up_to(highest_spawn)
+	
+	get_tree().paused = false
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
@@ -78,3 +82,10 @@ func spawn_layer_at(y_pos: float) -> void:
 		new_bubble.global_position = Vector2(x, y_pos + randi_range(-spawn_height_margin, spawn_height_margin))
 		new_bubble.set_data(frog_datas.pick_random())
 		add_child(new_bubble)
+
+func _on_player_player_dead() -> void:
+	death_screen.show()
+	get_tree().paused = true
+
+func _on_death_screen_restart_game() -> void:
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

@@ -18,6 +18,6 @@ func _physics_process(delta: float) -> void:
 	for i in range(get_slide_collision_count()):
 		if get_slide_collision(i).get_collider().name == "Player":
 			get_slide_collision(i).get_collider().hit(10)
-			#velocity.rotated(get_slide_collision(i).get_angle())
+			
 			velocity = velocity.length() * Vector2.RIGHT.rotated(get_slide_collision(i).get_angle())
 			get_slide_collision(i).get_collider().velocity = get_slide_collision(i).get_collider().velocity.length() * Vector2.LEFT.rotated(get_slide_collision(i).get_angle()) * 0.5

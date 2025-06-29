@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cs2v2aikg2lsg"]
 
 [ext_resource type="Script" uid="uid://ch6bxein65cgn" path="res://scripts/hud.gd" id="1_276te"]
-[ext_resource type="Texture2D" uid="uid://dyswg2ddwmkm5" path="res://assets/images/Heart (2).png" id="1_rbyyf"]
+[ext_resource type="Texture2D" uid="uid://da7v1mk1asyxm" path="res://assets/images/frog_heart.png" id="2_276te"]
 
 [node name="HUD" type="PanelContainer"]
 self_modulate = Color(1, 1, 1, 0)
@@ -24,7 +24,8 @@ layout_mode = 2
 
 [node name="Health Picture" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("1_rbyyf")
+texture = ExtResource("2_276te")
+expand_mode = 3
 
 [node name="Health Label" type="Label" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
