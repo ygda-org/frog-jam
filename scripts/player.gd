@@ -110,13 +110,9 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.dart_timer.one_shot = true
 			self.dart_timer.start()
 		FrogData.Powerups.Rocket:
-			tongue.SPEED = 100
-			CHAIN_PULL = 210
-			MAX_SPEED = 4000
+			tongue.SPEED = 150
 			self.rocket_timer.timeout.connect(func():
-				CHAIN_PULL = 105
-				tongue.SPEED = 50
-				MAX_SPEED = 2000)
+				tongue.SPEED = 50)
 			self.rocket_timer.one_shot = true
 			self.rocket_timer.start()
 
