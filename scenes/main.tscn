@@ -62,7 +62,7 @@ position = Vector2(459, -353)
 
 [node name="Camera2D" type="Camera2D" parent="subview/Stomach"]
 
-[node name="ClodSpawner" parent="." instance=ExtResource("8_tipki")]
+[node name="BackgroundSpawner" parent="." instance=ExtResource("8_tipki")]
 
 [node name="WaterBody" parent="." instance=ExtResource("9_85g3d")]
 SPRING_GAP_DIST = 30.0

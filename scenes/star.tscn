@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwujyhoas3qge"]
+
+[ext_resource type="Script" uid="uid://duubd2extjotc" path="res://scripts/star.gd" id="1_mcqwg"]
+
+[node name="Star" type="Node2D"]
+script = ExtResource("1_mcqwg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

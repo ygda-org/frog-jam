@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://daayd3mbj55r2"]
+[gd_scene load_steps=9 format=3 uid="uid://daayd3mbj55r2"]
 
 [ext_resource type="Texture2D" uid="uid://dj8rjbpefhblg" path="res://assets/images/fly_spreadsheet.png" id="1_djddo"]
+[ext_resource type="Script" uid="uid://clk6jny16dgp6" path="res://scripts/fly.gd" id="1_xr3pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djddo"]
 atlas = ExtResource("1_djddo")
@@ -42,6 +43,7 @@ animations = [{
 radius = 95.3363
 
 [node name="Fly" type="StaticBody2D"]
+script = ExtResource("1_xr3pu")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eyt7k")
