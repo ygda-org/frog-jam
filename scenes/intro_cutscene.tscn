@@ -69,6 +69,7 @@ position = Vector2(0, -1200)
 texture = ExtResource("10_pbanw")
 
 [node name="Panel10" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("11_fxsd4")
 
 [node name="Panel11" type="Sprite2D" parent="."]

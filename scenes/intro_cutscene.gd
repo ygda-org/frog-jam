@@ -19,6 +19,9 @@ func _on_timer_timeout():
 		return
 	enable(panels[current_panel])
 	current_panel += 1
+	if current_panel == 4:
+		current_panel += 1
+		_on_timer_timeout()
 	if current_panel == 9:
 		$Ground_fade_delay.start()
 
@@ -35,8 +38,10 @@ func _process(delta):
 			fade_in(i, delta)
 		if ground_ready:
 			fade_in(9, delta)
+		var old_panel_position = panels[i].position
 		panels[i].position += velocities[i] * SLIDE_SPEED * delta
-		if panels[i].position.x > -10 and panels[i].position.x < 10 and panels[i].position.y > -10 and panels[i].position.y < 10:
+		if (old_panel_position.x * panels[i].position.x < 0) or (old_panel_position.y * panels[i].position.y < 0):
+			panels[i].position = Vector2(0,0)
 			velocities[i] = Vector2(0,0)
 	if (current_panel == 8):
 		fade_out_up_to(8, delta)
@@ -49,7 +54,7 @@ func fade_out_up_to(index: int, delta):
 		fade_out(i, delta)
 
 func fade_out(index: int, delta):
-	panels[index].set_modulate(lerp(panels[index].get_modulate(), Color(1,1,1,-1), delta*5))
+	panels[index].set_modulate(lerp(panels[index].get_modulate(), Color(1,1,1,-1), delta*2))
 	if panels[index].get_modulate() == Color(1,1,1,1):
 		panels[index].visible = false
 
