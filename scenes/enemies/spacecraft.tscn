@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dv0t77dnh3xx3"]
+
+[ext_resource type="Script" uid="uid://b5tv847d2lu8f" path="res://scenes/enemies/spacecraft.gd" id="1_n6fqi"]
+[ext_resource type="PackedScene" uid="uid://drgak3ksju5sm" path="res://scenes/enemies/base_enemy_component.tscn" id="2_uit5v"]
+[ext_resource type="Texture2D" uid="uid://crfolce8j0it4" path="res://assets/images/Spacecraft 1.PNG" id="3_b4jsq"]
+
+[node name="Spacecraft" type="CharacterBody2D"]
+script = ExtResource("1_n6fqi")
+
+[node name="BaseEnemyComponent" parent="." instance=ExtResource("2_uit5v")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("3_b4jsq")
+
+[node name="Collision1" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-33, -571, 18, -506, 44, -443, 47, -272, 81, -341, 129, -269, 132, 250, 218, 354, 228, 424, 150, 444, 136, 474, 143, 524, 163, 562, 139, 577, 138, 602, 106, 610, 66, 602, 70, 575, 40, 562, 62, 527, 34, 524, 24, 540, -95, 544, -112, 523, -135, 522, -117, 555, -146, 569, -144, 596, -176, 606, -213, 595, -215, 567, -240, 558, -219, 527, -214, 485, -224, 438, -306, 425, -295, 352, -208, 255, -208, -269, -156, -341, -122, -264, -113, -445, -84, -512)
+disabled = true
+
+[node name="Collision2" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(97, -614, 148, -639, 203, -639, 255, -617, 288, -585, 317, -530, 315, -467, 285, -417, 228, -373, 154, -365, 75, -403, 41, -473, 47, -547)
+disabled = true
+
+[node name="Camera2D" type="Camera2D" parent="."]

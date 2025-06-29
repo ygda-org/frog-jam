@@ -28,4 +28,4 @@ script = ExtResource("1_jhdmt")
 sprite_frames = SubResource("SpriteFrames_jhdmt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-48, 10, -28, -41, 46, -26, 45, 54)
+polygon = PackedVector2Array(-194, -151, -139, -199, -64, -329, -40, -442, -53, -524, 20, -433, 166, -366, 256, -350, 326, -354, 263, -231, 228, -80, 218, 106, 242, 268, 131, 98, 24, -1, -112, -104)
