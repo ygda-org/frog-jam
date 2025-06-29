@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://nodcrbevs3q0"]
+[gd_scene load_steps=8 format=3 uid="uid://nodcrbevs3q0"]
 
+[ext_resource type="Script" uid="uid://3i1cnjc8qdjw" path="res://scenes/dragonfly.gd" id="1_br0up"]
 [ext_resource type="Texture2D" uid="uid://bt3mqvvx18hl7" path="res://assets/images/dragonfly_spreadsheet.png" id="1_gsfej"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_br0up"]
@@ -39,6 +40,7 @@ animations = [{
 }]
 
 [node name="Dragonfly" type="StaticBody2D"]
+script = ExtResource("1_br0up")
 
 [node name="Anim" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_143v5")

@@ -26,7 +26,7 @@ func _on_timer_timeout():
 	print(current_panel)
 	if current_panel == 32:
 		$Timer.queue_free()
-		return
+		queue_free()
 	if current_panel != 11:
 		enable(panels[current_panel])
 	else:
