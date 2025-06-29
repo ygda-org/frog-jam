@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 		if collision.get_collider() == tongue.hooked_creature:
 			tongue.release()
 		collision.get_collider().queue_free()
-		scale += Vector2(0.1, 0.1)
+		scale += Vector2(0.03, 0.03)
 	
 	STOMACH.impulse(-velocity*0.2)
 	
