@@ -1,6 +1,6 @@
 extends Node2D
 
-var SPEED = randi_range(100,300)
+var SPEED = randi_range(10,30)
 
 var sprites = [preload("res://assets/images/clod1.PNG"), preload("res://assets/images/clod2.PNG"), preload("res://assets/images/clod3.PNG")]
 

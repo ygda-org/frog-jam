@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://bak715owo0x27"]
+[gd_scene load_steps=2 format=3 uid="uid://dl1oqaw7igiwu"]
 
 [ext_resource type="Script" uid="uid://4n1xs6ohlypl" path="res://scripts/background_spawner.gd" id="1_vbdun"]
 
