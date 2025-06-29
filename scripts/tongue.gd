@@ -16,6 +16,7 @@ var hooked: bool = false
 var retracting: bool = false
 
 var hooked_creature = null
+var relative_hooked_position: Vector2
 
 const SPEED: int = 50
 
@@ -64,6 +65,8 @@ func _physics_process(delta: float) -> void:
 		var collision: KinematicCollision2D = self.tongue_tip.move_and_collide(direction * SPEED)
 		if collision:
 			self.hooked_creature = collision.get_collider()
+			if self.hooked_creature.name == "Bird":
+				relative_hooked_position = self.hooked_creature.global_position - self.tongue_tip.global_position
 			self.hooked = true
 			self.flying = false
 			self.retracting = false
@@ -81,7 +84,8 @@ func _physics_process(delta: float) -> void:
 			self.hooked = false
 			self.flying = false
 			self.retracting = false
-	
+	elif hooked:
+		tongue_tip.global_position.x += self.hooked_creature.velocity.x * delta
 	self.tip_position = self.tongue_tip.global_position
 
 
