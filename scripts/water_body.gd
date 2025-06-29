@@ -27,9 +27,6 @@ func _ready() -> void:
 		instance.position.x = x
 		add_child(instance)
 		springs.append(instance)
-	
-	apply_force(10, 100)
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	update_all_water(3)
