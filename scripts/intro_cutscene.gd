@@ -26,7 +26,7 @@ func _on_timer_timeout():
 	print(current_panel)
 	if current_panel == 32:
 		$Timer.queue_free()
-		return
+		start_game()
 	if current_panel != 11:
 		enable(panels[current_panel])
 	else:
@@ -146,3 +146,11 @@ func _on_panel_12_animation_finished():
 
 func _on_pre_flash_delay_timeout():
 	flashing = true
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		start_game()
+
+func start_game():
+	get_parent().add_child(load("res://scenes/main.tscn").instantiate())
+	queue_free()

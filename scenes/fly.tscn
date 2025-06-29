@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://hrbn4a2fay3k"]
 
 [ext_resource type="Texture2D" uid="uid://dj8rjbpefhblg" path="res://assets/images/fly_spreadsheet.png" id="1_djddo"]
-[ext_resource type="Script" path="res://scripts/fly.gd" id="1_xr3pu"]
+[ext_resource type="Script" uid="uid://clk6jny16dgp6" path="res://scripts/fly.gd" id="1_xr3pu"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_djddo"]
 atlas = ExtResource("1_djddo")
