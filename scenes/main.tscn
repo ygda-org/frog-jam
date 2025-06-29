@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dfnmfuy47683b" path="res://scripts/main.gd" id="1_o6xl0"]
 [ext_resource type="Script" uid="uid://dr2tdfuug7fjk" path="res://scripts/camera.gd" id="2_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://c7qyjf71va1hr" path="res://scenes/frog_bubble.tscn" id="4_jyhfs"]
-[ext_resource type="Shader" uid="uid://b22bvp1175fek" path="res://scripts/space.gdshader" id="5_choun"]
+[ext_resource type="Shader" path="res://scripts/space.gdshader" id="5_choun"]
 [ext_resource type="Resource" uid="uid://bwfgmons2un3v" path="res://assets/resources/frog_resources/slowfall_frog.tres" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://btd1ic7rl6olk" path="res://scenes/stomach.tscn" id="7_o6xl0"]
 [ext_resource type="PackedScene" uid="uid://cs2v2aikg2lsg" path="res://ui/hud.tscn" id="7_tipki"]
