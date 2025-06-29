@@ -16,5 +16,4 @@ func water_update(k, d):
 	position.y += velocity
 
 func sine_sprite_offset(phase : float):
-	wave_position = position.y + sin(phase + position.x) * 5
-	$Sprite2D.global_position.y = wave_position
+	wave_position = position.y + sin(phase + position.x) * 20
