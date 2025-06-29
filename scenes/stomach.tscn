@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://ba28j2umdf122" path="res://scenes/stored_frog.tscn" id="2_4a0xn"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_4a0xn"]
-a = Vector2(-10, 64)
-b = Vector2(10, 64)
+a = Vector2(-10, 48)
+b = Vector2(10, 48)
 
 [node name="Stomach" type="Node2D"]
 script = ExtResource("1_4a0xn")

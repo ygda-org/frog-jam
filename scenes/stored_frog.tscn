@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://d2t62tpkyjnpo" path="res://scripts/stored_frog.gd" id="1_aj5sa"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_aj5sa"]
-bounce = 0.5
+bounce = 0.1
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4a0xn"]
-radius = 26.0768
+radius = 16.2788
 
 [node name="stored frog" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_aj5sa")
@@ -15,7 +15,7 @@ script = ExtResource("1_aj5sa")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-3.05176e-05, -1.52588e-05)
-scale = Vector2(0.15, 0.15)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("1_4kyb2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
