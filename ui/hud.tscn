@@ -110,3 +110,15 @@ custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 max_value = 3.0
 show_percentage = false
+
+[node name="MarginContainer4" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Button" type="Button" parent="MarginContainer4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Reset"
+
+[connection signal="pressed" from="MarginContainer4/Button" to="." method="_on_button_pressed"]

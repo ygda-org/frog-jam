@@ -8,3 +8,7 @@ extends Control
 @onready var slowfall: ProgressBar = $MarginContainer3/HBoxContainer/VBoxContainer1/ColorRect
 @onready var dart: ProgressBar = $MarginContainer3/HBoxContainer/VBoxContainer2/ColorRect
 @onready var rocket: ProgressBar = $MarginContainer3/HBoxContainer/VBoxContainer3/ColorRect
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/main.tscn")
