@@ -14,7 +14,7 @@ script = ExtResource("1_fcv5n")
 [node name="Camera2D" type="Camera2D" parent="."]
 scale = Vector2(0.959473, 0.430677)
 offset = Vector2(0, -8)
-zoom = Vector2(0.49, 0.4)
+zoom = Vector2(0.49, 0.402)
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-1194, -844)
