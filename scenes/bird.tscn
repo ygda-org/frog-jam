@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://cy8twfjat8r5d"]
+[gd_scene load_steps=11 format=3 uid="uid://cy8twfjat8r5d"]
 
 [ext_resource type="Script" uid="uid://c0pchppt5if0d" path="res://scripts/bird.gd" id="1_3po83"]
 [ext_resource type="Texture2D" uid="uid://pk2bg2yo63fj" path="res://assets/images/bird_spreadsheet.png" id="2_hq4t0"]
+[ext_resource type="PackedScene" uid="uid://dm5u05cajskqn" path="res://scenes/sound_timer.tscn" id="3_hq4t0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_twsrt"]
 atlas = ExtResource("2_hq4t0")
@@ -69,5 +70,11 @@ polygon = PackedVector2Array(-23, -115, -24, -108, -23, -81, -24, -25, -12, -12,
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-209.5, 12.5)
 scale = Vector2(0.0499999, 13.15)
+
+[node name="SoundTimer" parent="." instance=ExtResource("3_hq4t0")]
+chosen_sound = 1
+pitch_variance = Vector2(0.8, 1.2)
+wait_time = Vector2(10, 20)
+initial_wait = Vector2(2, 40)
 
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

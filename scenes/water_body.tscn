@@ -1,7 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://wtytpddo0wx5"]
+[gd_scene load_steps=5 format=3 uid="uid://bh2685pi3lftt"]
 
 [ext_resource type="Script" uid="uid://bjxrp3ee2vqhf" path="res://scripts/water_body.gd" id="1_i3kw6"]
-[ext_resource type="Shader" uid="uid://d3xy3n5kt7wjr" path="res://scripts/water_shader.gdshader" id="2_i3kw6"]
+[ext_resource type="Shader" path="res://scripts/water_shader.gdshader" id="2_i3kw6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ugtve"]
 shader = ExtResource("2_i3kw6")

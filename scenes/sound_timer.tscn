@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5u05cajskqn"]
+
+[ext_resource type="Script" uid="uid://cd2tjmhdfyj2u" path="res://scripts/sound_timer.gd" id="1_q42uy"]
+
+[node name="SoundTimer" type="Node2D"]
+script = ExtResource("1_q42uy")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

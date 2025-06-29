@@ -27,7 +27,7 @@ metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 script = ExtResource("2_0wpo5")
 label = 1
 stream = ExtResource("4_fqoqv")
-volume = 1.0
+volume = -9.615
 pitch = 1.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
