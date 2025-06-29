@@ -85,6 +85,10 @@ func _physics_process(delta: float) -> void:
 			self.flying = false
 			self.retracting = false
 	elif hooked:
+		if self.hooked_creature == null:
+			print("ERROR WOULD OCCUR")
+			hooked = false
+			return
 		tongue_tip.global_position.x += self.hooked_creature.velocity.x * delta
 	self.tip_position = self.tongue_tip.global_position
 
