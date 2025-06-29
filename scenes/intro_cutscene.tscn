@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b08a0a7wtcyqe"]
+[gd_scene load_steps=41 format=3 uid="uid://b08a0a7wtcyqe"]
 
 [ext_resource type="Script" uid="uid://pd4hkcsayvl5" path="res://scenes/intro_cutscene.gd" id="1_on3y1"]
 [ext_resource type="Texture2D" uid="uid://dbqlrpxur6ugk" path="res://assets/images/intro/scene_1-1.png" id="2_wo2cs"]
@@ -12,6 +12,131 @@
 [ext_resource type="Texture2D" uid="uid://b7i0vll5bk6te" path="res://assets/images/intro/scene_2-1.png" id="10_pbanw"]
 [ext_resource type="Texture2D" uid="uid://bpryav6l5qbx8" path="res://assets/images/intro/scene_2-2.png" id="11_fxsd4"]
 [ext_resource type="Texture2D" uid="uid://xsfyahkytsdn" path="res://assets/images/intro/scene_2-3.png" id="12_rqbdd"]
+[ext_resource type="Texture2D" uid="uid://b5q4twmhhab5t" path="res://assets/images/intro/SCENE 3 SPRITESHEET.png" id="13_2o38y"]
+[ext_resource type="Texture2D" uid="uid://de46nm4k7051n" path="res://assets/images/intro/scene_4-1.png" id="13_i4gpt"]
+[ext_resource type="Texture2D" uid="uid://cqe0nxj32yxtm" path="res://assets/images/intro/scene_4-2.png" id="14_2o38y"]
+[ext_resource type="Texture2D" uid="uid://eyveqaddla2m" path="res://assets/images/intro/scene_4-3.png" id="15_k5ksj"]
+[ext_resource type="Texture2D" uid="uid://bjhewpna8j2g8" path="res://assets/images/intro/scene_4-4.png" id="16_6psxe"]
+[ext_resource type="Texture2D" uid="uid://cflxhyuo7exx5" path="res://assets/images/intro/scene_4-5.png" id="17_yx07r"]
+[ext_resource type="Texture2D" uid="uid://ro02n22tg15d" path="res://assets/images/intro/scene_4-6.png" id="18_flcbd"]
+[ext_resource type="Texture2D" uid="uid://bhn4i2g0gwg3r" path="res://assets/images/intro/scene_5-1.png" id="20_yx07r"]
+[ext_resource type="Texture2D" uid="uid://c8wtvp3s8mnwx" path="res://assets/images/intro/scene_5-2.png" id="21_flcbd"]
+[ext_resource type="Texture2D" uid="uid://ht2qig8hcxeo" path="res://assets/images/intro/scene_5-3.png" id="22_ujkvu"]
+[ext_resource type="Texture2D" uid="uid://cymuybo0fffnv" path="res://assets/images/intro/scene_6-1.png" id="23_ujkvu"]
+[ext_resource type="Texture2D" uid="uid://c05in42xdcwwc" path="res://assets/images/intro/scene_6-2.png" id="24_8onrj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5ksj"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(0, 0, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6psxe"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(3716, 0, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yx07r"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(7432, 0, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_flcbd"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(11148, 0, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujkvu"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(14864, 0, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8onrj"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(0, 2090, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o5aua"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(3716, 2090, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_475n0"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(7432, 2090, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y11t0"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(11148, 2090, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ixccy"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(14864, 2090, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dafp8"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(0, 4180, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jxbw"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(3716, 4180, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1kwg4"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(7432, 4180, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dkhgs"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(11148, 4180, 3716, 2090)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_470g2"]
+atlas = ExtResource("13_2o38y")
+region = Rect2(14864, 4180, 3716, 2090)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1qbbb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k5ksj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6psxe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yx07r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_flcbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujkvu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8onrj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o5aua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_475n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y11t0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ixccy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dafp8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jxbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1kwg4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dkhgs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_470g2")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_on3y1")
@@ -50,6 +175,7 @@ texture = ExtResource("9_ndqjh")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
+one_shot = true
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -80,5 +206,76 @@ texture = ExtResource("12_rqbdd")
 wait_time = 2.5
 one_shot = true
 
+[node name="umbrella_delay" type="Timer" parent="."]
+one_shot = true
+
+[node name="scene_2_end_delay" type="Timer" parent="."]
+wait_time = 1.5
+one_shot = true
+
+[node name="Panel12" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+sprite_frames = SubResource("SpriteFrames_1qbbb")
+
+[node name="Panel13" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("13_i4gpt")
+
+[node name="Panel14" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("14_2o38y")
+
+[node name="Panel15" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("15_k5ksj")
+
+[node name="Panel16" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("16_6psxe")
+
+[node name="Panel17" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("17_yx07r")
+
+[node name="Panel18" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("18_flcbd")
+
+[node name="Panel19" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("20_yx07r")
+
+[node name="Panel20" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("21_flcbd")
+
+[node name="Panel21" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("22_ujkvu")
+
+[node name="Flash" type="ColorRect" parent="."]
+offset_left = -2487.0
+offset_top = -1641.0
+offset_right = -2447.0
+offset_bottom = -1601.0
+scale = Vector2(122.248, 77.8619)
+color = Color(1, 1, 1, 0)
+
+[node name="PreFlashDelay" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="Panel22" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("23_ujkvu")
+
+[node name="Panel23" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("24_8onrj")
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Ground_fade_delay" to="." method="_on_ground_fade_delay_timeout"]
+[connection signal="timeout" from="umbrella_delay" to="." method="_on_umbrella_delay_timeout"]
+[connection signal="timeout" from="scene_2_end_delay" to="." method="_on_scene_2_end_delay_timeout"]
+[connection signal="animation_finished" from="Panel12" to="." method="_on_panel_12_animation_finished"]
+[connection signal="timeout" from="PreFlashDelay" to="." method="_on_pre_flash_delay_timeout"]
