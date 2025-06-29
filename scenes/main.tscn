@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dqdho0tsm5oaw"]
+[gd_scene load_steps=15 format=3 uid="uid://dqdho0tsm5oaw"]
 
 [ext_resource type="PackedScene" uid="uid://c6uk1avdiasqd" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="Script" uid="uid://dfnmfuy47683b" path="res://scripts/main.gd" id="1_o6xl0"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cs2v2aikg2lsg" path="res://ui/hud.tscn" id="7_tipki"]
 [ext_resource type="PackedScene" path="res://scenes/Background_Spawner.tscn" id="8_tipki"]
 [ext_resource type="PackedScene" uid="uid://d4ac5b740vh5i" path="res://scenes/water/water_body.tscn" id="9_85g3d"]
+[ext_resource type="PackedScene" uid="uid://bv0gtd7gib6qt" path="res://ui/death_screen.tscn" id="11_ya4ey"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o6xl0"]
 viewport_path = NodePath("subview")
@@ -76,3 +77,8 @@ starting_y = 0.0
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="HUD" parent="CanvasLayer" instance=ExtResource("7_tipki")]
+
+[node name="Death Screen" parent="CanvasLayer" instance=ExtResource("11_ya4ey")]
+
+[connection signal="player_dead" from="Player" to="." method="_on_player_player_dead"]
+[connection signal="restart_game" from="CanvasLayer/Death Screen" to="." method="_on_death_screen_restart_game"]

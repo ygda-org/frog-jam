@@ -1,6 +1,8 @@
 class_name Player
 extends CharacterBody2D
 
+signal player_dead
+
 var JUMP_FORCE: int = 1550
 const MAX_GRAVITY: int = 60
 var GRAVITY: int = 60
@@ -16,7 +18,7 @@ var invincible = false
 @onready var tongue: Tongue = $Tongue
 @onready var powerup_timer: Timer = $Timer
 @export var STOMACH: Stomach = null
-@export var HUD: Control = null
+@export var HUD: HUD = null
 
 var chain_velocity := Vector2(0,0)
 
@@ -99,14 +101,16 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.powerup_timer.start()
 
 func hit(dmg: int):
-	#if invincible:
-		#return
-	#else:
-	invincible = true
-	collision_layer = 0
-	health -= dmg
-	HUD.get_node("MarginContainer/HBoxContainer/Health Label").text = str(health)
-	$IFrames.start()
+	if not invincible:
+		invincible = true
+		collision_layer = 0
+		health -= dmg
+		health = max(health, 0)
+		HUD.health_label.text = str(health)
+		$IFrames.start()
+		
+		if health <= 0:
+			player_dead.emit()
 
 
 func _on_i_frames_timeout():
