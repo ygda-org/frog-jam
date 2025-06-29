@@ -80,7 +80,7 @@ expand_mode = 5
 [node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer1"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(0.540836, 0, 0.126547, 1)
+color = Color(1, 0, 0, 1)
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer3/HBoxContainer"]
 layout_mode = 2
@@ -93,7 +93,7 @@ expand_mode = 5
 [node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer2"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(0.540836, 0, 0.126547, 1)
+color = Color(1, 0, 0, 1)
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer3/HBoxContainer"]
 layout_mode = 2
@@ -106,4 +106,4 @@ expand_mode = 5
 [node name="ColorRect" type="ColorRect" parent="MarginContainer3/HBoxContainer/VBoxContainer3"]
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
-color = Color(0.540836, 0, 0.126547, 1)
+color = Color(1, 0, 0, 1)
