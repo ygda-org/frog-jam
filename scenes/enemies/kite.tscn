@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://drgak3ksju5sm" path="res://scenes/enemies/base_enemy_component.tscn" id="3_okv3r"]
 
 [node name="Kite" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jhdmt")
 
 [node name="BaseEnemyComponent" parent="." instance=ExtResource("3_okv3r")]
