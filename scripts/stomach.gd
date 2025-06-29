@@ -30,7 +30,7 @@ func add_creature(texture: Texture2D) -> void:
 	for frog: StoredFrog in FROGS:
 		frog.scale = frog_scale
 	
-	if len(FROGS) > 3:
+	if len(FROGS) > 5:
 		remove_child.call_deferred(FROGS.pop_front())
 	
 	#print(len(FROGS))
