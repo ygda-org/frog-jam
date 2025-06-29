@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bdbipkrbjys6u"]
 
-[ext_resource type="Script" path="res://scripts/kite.gd" id="1_jhdmt"]
+[ext_resource type="Script" uid="uid://drh2dmkxqfmfa" path="res://scripts/kite.gd" id="1_jhdmt"]
 [ext_resource type="Texture2D" uid="uid://q0swwq7lqv51" path="res://assets/images/Kite 2.PNG" id="3_m3waj"]
 [ext_resource type="PackedScene" uid="uid://drgak3ksju5sm" path="res://scenes/enemies/base_enemy_component.tscn" id="3_okv3r"]
 

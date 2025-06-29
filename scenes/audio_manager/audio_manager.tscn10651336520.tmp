@@ -19,7 +19,7 @@
 script = ExtResource("2_0wpo5")
 label = 0
 stream = ExtResource("3_fb584")
-volume = -13.676
+volume = 1.0
 pitch = 1.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 

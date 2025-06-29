@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dv0t77dnh3xx3"]
 
-[ext_resource type="Script" path="res://scripts/spacecraft.gd" id="1_n6fqi"]
+[ext_resource type="Script" uid="uid://b5tv847d2lu8f" path="res://scripts/spacecraft.gd" id="1_n6fqi"]
 [ext_resource type="PackedScene" uid="uid://drgak3ksju5sm" path="res://scenes/enemies/base_enemy_component.tscn" id="2_uit5v"]
 [ext_resource type="Texture2D" uid="uid://crfolce8j0it4" path="res://assets/images/Spacecraft 1.PNG" id="3_b4jsq"]
 
