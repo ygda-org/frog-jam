@@ -18,6 +18,7 @@ var invincible = false
 @onready var tongue: Tongue = $Tongue
 @onready var slowfall_timer: Timer = $SlowfallTimer
 @onready var dart_timer: Timer = $DartTimer
+@onready var rocket_timer: Timer = $RocketTimer
 @export var STOMACH: Stomach = null
 @export var HUD: HUD = null
 
@@ -104,7 +105,13 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.dart_timer.one_shot = true
 			self.dart_timer.start()
 		FrogData.Powerups.Rocket:
-			pass
+			tongue.SPEED = 100
+			CHAIN_PULL = 210
+			self.rocket_timer.timeout.connect(func():
+				CHAIN_PULL = 105
+				tongue.SPEED = 50)
+			self.rocket_timer.one_shot = true
+			self.rocket_timer.start()
 
 func hit(dmg: int):
 	if not invincible:

@@ -18,7 +18,7 @@ var retracting: bool = false
 var hooked_creature = null
 var relative_hooked_position: Vector2
 
-const SPEED: int = 50
+var SPEED: int = 50
 
 
 func shoot(dir: Vector2) -> void:
