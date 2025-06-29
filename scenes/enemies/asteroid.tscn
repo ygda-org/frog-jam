@@ -11,6 +11,7 @@ collision_mask = 2
 script = ExtResource("1_08eb2")
 
 [node name="BaseEnemyComponent" parent="." instance=ExtResource("2_2h6hj")]
+damage_dealt = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_08eb2")

@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Asteroid
 
 var textures = [preload("res://assets/images/Asteroid 1.png"), preload("res://assets/images/Asteroid 2.png"), preload("res://assets/images/Asteroid 3.png"), preload("res://assets/images/Asteroid 4.png")]
 var collisions = [preload("res://assets/resources/asteroid_collision_1.tres"), preload("res://assets/resources/asteroid_collision_2.tres"), preload("res://assets/resources/asteroid_collision_3.tres"), preload("res://assets/resources/asteroid_collision_4.tres")]
@@ -17,7 +18,9 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	for i in range(get_slide_collision_count()):
 		if get_slide_collision(i).get_collider().name == "Player":
-			get_slide_collision(i).get_collider().hit(10)
 			
 			velocity = velocity.length() * Vector2.RIGHT.rotated(get_slide_collision(i).get_angle())
 			get_slide_collision(i).get_collider().velocity = get_slide_collision(i).get_collider().velocity.length() * Vector2.LEFT.rotated(get_slide_collision(i).get_angle()) * 0.5
+
+func _to_string() -> String:
+	return "ASTEROID-" + str(position)

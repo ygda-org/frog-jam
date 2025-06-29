@@ -8,6 +8,7 @@
 script = ExtResource("1_jhdmt")
 
 [node name="BaseEnemyComponent" parent="." instance=ExtResource("3_okv3r")]
+damage_dealt = 1
 
 [node name="Collision1" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-194, -151, -139, -199, -64, -329, -40, -442, -53, -524, 20, -433, 166, -366, 256, -350, 326, -354, 263, -231, 228, -80, 218, 106, 242, 268, 131, 98, 24, -1, -112, -104)

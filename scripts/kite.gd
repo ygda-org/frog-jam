@@ -31,3 +31,6 @@ func _process(delta: float) -> void:
 	offset_position.x = origin_position.x + cos(elapsed_time) * shake_radius
 	offset_position.y = origin_position.y + sin(elapsed_time) * shake_radius
 	position = offset_position
+
+func _to_string() -> String:
+	return "KITE-" + str(position)

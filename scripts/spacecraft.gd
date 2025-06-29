@@ -1,4 +1,5 @@
 extends CharacterBody2D
+class_name Spacecraft
 
 const SPEED = 200
 
@@ -37,3 +38,6 @@ func _physics_process(delta):
 			
 			velocity = velocity.length() * Vector2.RIGHT.rotated(get_slide_collision(i).get_angle())
 			get_slide_collision(i).get_collider().velocity = get_slide_collision(i).get_collider().velocity.length() * Vector2.LEFT.rotated(get_slide_collision(i).get_angle()) * 0.5
+
+func _to_string() -> String:
+	return "SPACECRAFT-" + str(position)

@@ -3,19 +3,18 @@ extends Node2D
 class_name Base_Enemy
 
 @onready var parent : CharacterBody2D = get_parent()
-
+@export var damage_dealt : int
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
-
-func _on_body_entered(body: Node):
-	if body is Player:
-		(body as Player).enemy_collision(self)
+	for i in range(parent.get_slide_collision_count()):
+		var collision_obj := parent.get_slide_collision(i).get_collider()
+		if collision_obj != null  && collision_obj.name == "Player":
+			collision_obj.hit(damage_dealt)
 
 func suicide():
-	call_deferred("queue_free")
+	parent.call_deferred("queue_free")
 
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	call_deferred("queue_free")
+	suicide()

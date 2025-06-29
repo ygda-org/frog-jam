@@ -8,6 +8,7 @@
 script = ExtResource("1_n6fqi")
 
 [node name="BaseEnemyComponent" parent="." instance=ExtResource("2_uit5v")]
+damage_dealt = 25
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("3_b4jsq")

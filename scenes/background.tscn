@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://3aiq6pjsnudw"]
+
+[ext_resource type="Script" uid="uid://co21pudm57y81" path="res://scripts/background.gd" id="1_bkp1e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ya4ey"]
+
+[node name="Background" type="Parallax2D"]
+repeat_size = Vector2(5000, 5000)
+repeat_times = 2
+script = ExtResource("1_bkp1e")
+
+[node name="BlueRect" type="ColorRect" parent="."]
+z_index = -2
+material = SubResource("ShaderMaterial_ya4ey")
+offset_right = 5000.0
+offset_bottom = 5000.0
+color = Color(0.556671, 0.744031, 1, 1)
+
+[node name="BlackRect" type="ColorRect" parent="."]
+z_index = -2
+offset_right = 5000.0
+offset_bottom = 5000.0
+color = Color(0, 0, 0, 0)
