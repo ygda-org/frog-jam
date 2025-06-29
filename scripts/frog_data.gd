@@ -5,6 +5,7 @@ enum Powerups {
 	Slowfall,
 	Dart,
 	Rocket,
+	Wood
 }
 
 @export var texture: Texture2D

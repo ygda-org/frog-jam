@@ -122,6 +122,8 @@ func collect_frog(frog_data: FrogData) -> void:
 				tongue.SPEED = 50)
 			self.rocket_timer.one_shot = true
 			self.rocket_timer.start()
+		FrogData.Powerups.Wood:
+			health += 20
 
 func hit(dmg: int):
 	if not (invincible or poisonous):
