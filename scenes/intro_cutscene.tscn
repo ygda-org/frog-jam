@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://b08a0a7wtcyqe"]
+[gd_scene load_steps=13 format=3 uid="uid://b08a0a7wtcyqe"]
 
 [ext_resource type="Script" uid="uid://pd4hkcsayvl5" path="res://scenes/intro_cutscene.gd" id="1_on3y1"]
 [ext_resource type="Texture2D" uid="uid://dbqlrpxur6ugk" path="res://assets/images/intro/scene_1-1.png" id="2_wo2cs"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://cphqjil1rwhwf" path="res://assets/images/intro/scene_1-6.png" id="7_rh6bc"]
 [ext_resource type="Texture2D" uid="uid://w02rteuow1qv" path="res://assets/images/intro/scene_1-7.png" id="8_3jwfw"]
 [ext_resource type="Texture2D" uid="uid://jatb86x1dpp1" path="res://assets/images/intro/scene_1-8.png" id="9_ndqjh"]
+[ext_resource type="Texture2D" uid="uid://b7i0vll5bk6te" path="res://assets/images/intro/scene_2-1.png" id="10_pbanw"]
+[ext_resource type="Texture2D" uid="uid://bpryav6l5qbx8" path="res://assets/images/intro/scene_2-2.png" id="11_fxsd4"]
+[ext_resource type="Texture2D" uid="uid://xsfyahkytsdn" path="res://assets/images/intro/scene_2-3.png" id="12_rqbdd"]
 
 [node name="IntroCutscene" type="Node2D"]
 script = ExtResource("1_on3y1")
@@ -30,6 +33,7 @@ modulate = Color(1, 1, 1, 0)
 texture = ExtResource("5_fxsd4")
 
 [node name="Panel5" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("6_rqbdd")
 
 [node name="Panel6" type="Sprite2D" parent="."]
@@ -49,7 +53,7 @@ wait_time = 2.0
 autostart = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.3, 0.3)
+zoom = Vector2(0.31, 0.31)
 
 [node name="BG" type="ColorRect" parent="."]
 z_index = -1
@@ -60,4 +64,20 @@ offset_bottom = -1443.0
 scale = Vector2(112.993, 70.0458)
 color = Color(0.882353, 0.929412, 0.945098, 1)
 
+[node name="Panel9" type="Sprite2D" parent="."]
+position = Vector2(0, -1200)
+texture = ExtResource("10_pbanw")
+
+[node name="Panel10" type="Sprite2D" parent="."]
+texture = ExtResource("11_fxsd4")
+
+[node name="Panel11" type="Sprite2D" parent="."]
+position = Vector2(3000, 0)
+texture = ExtResource("12_rqbdd")
+
+[node name="Ground_fade_delay" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Ground_fade_delay" to="." method="_on_ground_fade_delay_timeout"]
