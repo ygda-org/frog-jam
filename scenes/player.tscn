@@ -124,6 +124,7 @@ one_shot = true
 one_shot = true
 
 [node name="DartTimer" type="Timer" parent="."]
+wait_time = 100.0
 one_shot = true
 
 [node name="RocketTimer" type="Timer" parent="."]

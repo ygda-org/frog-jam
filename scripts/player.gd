@@ -80,12 +80,12 @@ func _physics_process(_delta: float) -> void:
 		
 	position.y = min(0.0, position.y)
 	
-
 func enemy_collision(enemy: Variant):
 	if poisonous:
 		enemy.suicide()
-	else:
-		print("Player collided with: " + str(enemy))
+		#return false
+	#else:
+		#return true
 
 func collect_frog(frog_data: FrogData) -> void:
 	STOMACH.add_creature(frog_data.texture)
@@ -117,7 +117,7 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.rocket_timer.start()
 
 func hit(dmg: int):
-	if not invincible:
+	if not (invincible or poisonous):
 		invincible = true
 		collision_layer = 0
 		health -= dmg

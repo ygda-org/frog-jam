@@ -11,6 +11,7 @@ func _process(delta: float) -> void:
 		var collision_obj := parent.get_slide_collision(i).get_collider()
 		if collision_obj != null  && collision_obj.name == "Player":
 			collision_obj.hit(damage_dealt)
+			collision_obj.enemy_collision(self)
 
 func suicide():
 	parent.call_deferred("queue_free")
