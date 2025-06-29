@@ -43,8 +43,12 @@ func _physics_process(_delta: float) -> void:
 	velocity.y += GRAVITY
 
 	if tongue.hooked:
+		if $Anim.animation != "expanded" and $Anim.animation != "expand":
+			$Anim.play("expand")
 		chain_velocity = tongue.to_local(tongue.tip_position).normalized() * CHAIN_PULL
 	else:
+		if $Anim.animation != "collapsed" and $Anim.animation != "collapse":
+			$Anim.play("collapse")
 		chain_velocity = Vector2(0,0)
 		
 	velocity += chain_velocity
@@ -134,3 +138,10 @@ func kill(to_be_killed: Variant): # calls queue_free on object
 func _on_i_frames_timeout():
 	invincible = false
 	collision_layer = 2
+
+
+func _on_anim_animation_finished():
+	if $Anim.animation == "collapse":
+		$Anim.play("collapsed")
+	elif $Anim.animation == "expand":
+		$Anim.play("expanded")
