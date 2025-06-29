@@ -1,7 +1,7 @@
 extends Node2D
 
 
-@export var spawn_margin: int = 1000
+@export var spawn_margin: int = 1500
 @export var spawn_interval: int = 750
 @export var creatures_per_layer: int = 2
 @export var enemies_per_layer: int = 1

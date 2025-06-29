@@ -10,7 +10,7 @@ func _process(delta: float) -> void:
 	for i in range(parent.get_slide_collision_count()):
 		var collision_obj := parent.get_slide_collision(i).get_collider()
 		if collision_obj != null  && collision_obj.name == "Player":
-			print('collision')
+			#print('collision')
 			collision_obj.hit(damage_dealt)
 			collision_obj.enemy_collision(self)
 
