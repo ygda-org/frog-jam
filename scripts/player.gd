@@ -80,7 +80,7 @@ func collect_frog(frog_data: FrogData) -> void:
 	
 	match frog_data.powerup:
 		FrogData.Powerups.Slowfall:
-			print("Slow fall attained!")
+			#print("Slow fall attained!")
 			self.GRAVITY = self.MAX_GRAVITY / 2
 			self.powerup_timer.timeout.connect(func():
 				self.GRAVITY = self.MAX_GRAVITY
@@ -90,7 +90,7 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.powerup_timer.start()
 			#print("slowfall activated")
 		FrogData.Powerups.Dart:
-			print("Poison attained!")
+			#print("Poison attained!")
 			poisonous = true
 			self.powerup_timer.timeout.connect(func():
 				poisonous = false
@@ -99,14 +99,16 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.powerup_timer.start()
 
 func hit(dmg: int):
-	if invincible:
-		return
-	else:
-		invincible = true
-		health -= dmg
-		HUD.get_node("MarginContainer/HBoxContainer/Health Label").text = str(health)
-		$IFrames.start()
+	#if invincible:
+		#return
+	#else:
+	invincible = true
+	collision_layer = 0
+	health -= dmg
+	HUD.get_node("MarginContainer/HBoxContainer/Health Label").text = str(health)
+	$IFrames.start()
 
 
 func _on_i_frames_timeout():
 	invincible = false
+	collision_layer = 2

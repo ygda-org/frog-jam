@@ -15,4 +15,4 @@ func _process(delta):
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	position.x = (DisplayServer.screen_get_size().x / -2)-150
-	print(position.x)
+	#print(position.x)
