@@ -29,7 +29,7 @@ var poisonous : bool = false
 func _ready() -> void:
 	self.slowfall_timer.wait_time = self.powerup_time_length
 	self.dart_timer.wait_time = self.powerup_time_length
-	self.RocketTimer.wait_time = self.powerup_time_length
+	self.rocket_timer.wait_time = self.powerup_time_length
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
