@@ -143,3 +143,7 @@ func weighted_random(choices: Dictionary):
 		if accumulated_weight >= threshold:
 			return choice
 	return choices.keys()[-1]
+
+func win():
+	get_parent().win()
+	call_deferred("queue_free")
