@@ -24,7 +24,7 @@ var edible_scenes: Dictionary = {
 	"fly": preload("res://scenes/fly.tscn"),
 	"bird": preload("res://scenes/bird.tscn"),
 	"dragonfly": preload("res://scenes/dragonfly.tscn"),
-	#"planet": preload()
+	"planet": preload("res://scenes/planet.tscn")
 }
 
 var highest_spawn: float = 0.0
