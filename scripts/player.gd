@@ -56,7 +56,7 @@ func _physics_process(_delta: float) -> void:
 	if collision:
 		if collision.get_collider() == tongue.hooked_creature:
 			tongue.release()
-		call_deferred(collision.get_collider().queue_free())
+		call_deferred("kill", collision.get_collider())
 		scale += Vector2(0.03, 0.03)
 	
 	STOMACH.impulse(-velocity*0.2)
@@ -126,6 +126,8 @@ func hit(dmg: int):
 		if health <= 0:
 			player_dead.emit()
 
+func kill(to_be_killed: Variant): # calls queue_free on object
+	to_be_killed.queue_free()
 
 func _on_i_frames_timeout():
 	invincible = false
