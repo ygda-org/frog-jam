@@ -5,6 +5,8 @@ const SPEED = 200
 
 var random = RandomNumberGenerator.new()
 
+@onready var border = $Polygon2D
+
 var starting_side
 var rotationdeg
 
