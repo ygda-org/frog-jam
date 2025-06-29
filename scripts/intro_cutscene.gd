@@ -15,12 +15,16 @@ var fade_out_scene_4 = false
 
 var flashing = false
 
-@onready var panels = [$Panel1, $Panel2, $Panel3, $Panel4, $Panel5, $Panel6, $Panel7, $Panel8, $Panel9, $Panel10, $Panel11, $Panel12, $Panel13, $Panel15, $Panel14, $Panel16, $Panel17, $Panel18, $Panel19, $Panel20, $Panel21, $Panel23, $Panel22]
-var velocities = [Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2()]
+@onready var panels = [$Panel1, $Panel2, $Panel3, $Panel4, $Panel5, $Panel6, $Panel7, $Panel8, $Panel9, $Panel10, $Panel11, $Panel12, $Panel13, $Panel15, $Panel14, $Panel16, $Panel17, $Panel18, $Panel19, $Panel20, $Panel21, $Panel23, $Panel22, $Panel24, $Panel25, $Panel26, $Panel27, $Panel28, $Panel29, $Panel30, $Panel31, $Panel32, $Panel33]
+var velocities = [Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2(), Vector2()]
+
+func _ready():
+	for i in range(23, 33):
+		panels[i].set_modulate(Color(1,1,1,0))
 
 func _on_timer_timeout():
 	print(current_panel)
-	if current_panel == 22:
+	if current_panel == 32:
 		$Timer.queue_free()
 		return
 	if current_panel != 11:
@@ -76,7 +80,7 @@ func _process(delta):
 	if panel_12_fading_out:
 		fade_out(11, delta)
 	delta_global = delta
-	for i in range(23):
+	for i in range(33):
 		if (i == 3 or i == 4 or i == 6 or i == 7) and i <= current_panel and current_panel <= 8:
 			fade_in(i, delta)
 		if ground_ready and current_panel <= 11:
@@ -86,6 +90,8 @@ func _process(delta):
 		if (i >= 18 and i <= 20) and i <= current_panel and current_panel <= 21:
 			fade_in(i, delta)
 		if (i >= 21 and i <= 22) and i <= current_panel and current_panel <= 23:
+			fade_in(i, delta)
+		if (i >= 23 and i <= 33) and i <= current_panel and current_panel <= 33:
 			fade_in(i, delta)
 		var old_panel_position = panels[i].position
 		panels[i].position += velocities[i] * SLIDE_SPEED * delta
@@ -101,6 +107,8 @@ func _process(delta):
 	if current_panel == 21:
 		fade_out_up_to(21, delta)
 		$Flash.color = lerp($Flash.color, Color(1,1,1,-1), delta*2)
+	if current_panel == 23:
+		fade_out_up_to(23, delta)
 
 func fade_in(index: int, delta):
 	panels[index].set_modulate(lerp(panels[index].get_modulate(), Color(1,1,1,1), delta*1.2))

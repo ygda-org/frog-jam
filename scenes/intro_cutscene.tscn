@@ -1,6 +1,6 @@
-[gd_scene load_steps=41 format=3 uid="uid://b08a0a7wtcyqe"]
+[gd_scene load_steps=51 format=3 uid="uid://b08a0a7wtcyqe"]
 
-[ext_resource type="Script" uid="uid://pd4hkcsayvl5" path="res://scenes/intro_cutscene.gd" id="1_on3y1"]
+[ext_resource type="Script" uid="uid://pd4hkcsayvl5" path="res://scripts/intro_cutscene.gd" id="1_on3y1"]
 [ext_resource type="Texture2D" uid="uid://dbqlrpxur6ugk" path="res://assets/images/intro/scene_1-1.png" id="2_wo2cs"]
 [ext_resource type="Texture2D" uid="uid://dtb13cy8d48wm" path="res://assets/images/intro/scene_1-2.png" id="3_bprnf"]
 [ext_resource type="Texture2D" uid="uid://4d7f380r2rn5" path="res://assets/images/intro/scene_1-3.png" id="4_pbanw"]
@@ -24,6 +24,16 @@
 [ext_resource type="Texture2D" uid="uid://ht2qig8hcxeo" path="res://assets/images/intro/scene_5-3.png" id="22_ujkvu"]
 [ext_resource type="Texture2D" uid="uid://cymuybo0fffnv" path="res://assets/images/intro/scene_6-1.png" id="23_ujkvu"]
 [ext_resource type="Texture2D" uid="uid://c05in42xdcwwc" path="res://assets/images/intro/scene_6-2.png" id="24_8onrj"]
+[ext_resource type="Texture2D" uid="uid://woqrytuvcdxb" path="res://assets/images/intro/scene_7-1.png" id="25_470g2"]
+[ext_resource type="Texture2D" uid="uid://bpfmh8cm4xmlg" path="res://assets/images/intro/scene_7-2.png" id="26_1qbbb"]
+[ext_resource type="Texture2D" uid="uid://ckqpwyjnh1h6j" path="res://assets/images/intro/scene_7-3.png" id="27_dqogl"]
+[ext_resource type="Texture2D" uid="uid://b45nmih7l86h8" path="res://assets/images/intro/scene_7-4.png" id="28_jb140"]
+[ext_resource type="Texture2D" uid="uid://sgm80dyd6poy" path="res://assets/images/intro/scene_7-5.png" id="29_s8yb1"]
+[ext_resource type="Texture2D" uid="uid://wr5lslq3p4lc" path="res://assets/images/intro/scene_7-6.png" id="30_tuck1"]
+[ext_resource type="Texture2D" uid="uid://cujcoyankfmfj" path="res://assets/images/intro/scene_7-7.png" id="31_7utm2"]
+[ext_resource type="Texture2D" uid="uid://4sra42xbmibt" path="res://assets/images/intro/scene_7-8.png" id="32_tuaw5"]
+[ext_resource type="Texture2D" uid="uid://lr8t4bxjk17g" path="res://assets/images/intro/scene_7-9.png" id="33_d5ne3"]
+[ext_resource type="Texture2D" uid="uid://iyrp7qvf1cuo" path="res://assets/images/intro/scene_7-10.png" id="34_0tg1p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k5ksj"]
 atlas = ExtResource("13_2o38y")
@@ -272,6 +282,36 @@ texture = ExtResource("23_ujkvu")
 [node name="Panel23" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("24_8onrj")
+
+[node name="Panel24" type="Sprite2D" parent="."]
+texture = ExtResource("25_470g2")
+
+[node name="Panel25" type="Sprite2D" parent="."]
+texture = ExtResource("26_1qbbb")
+
+[node name="Panel26" type="Sprite2D" parent="."]
+texture = ExtResource("27_dqogl")
+
+[node name="Panel27" type="Sprite2D" parent="."]
+texture = ExtResource("28_jb140")
+
+[node name="Panel28" type="Sprite2D" parent="."]
+texture = ExtResource("29_s8yb1")
+
+[node name="Panel29" type="Sprite2D" parent="."]
+texture = ExtResource("30_tuck1")
+
+[node name="Panel30" type="Sprite2D" parent="."]
+texture = ExtResource("31_7utm2")
+
+[node name="Panel31" type="Sprite2D" parent="."]
+texture = ExtResource("32_tuaw5")
+
+[node name="Panel32" type="Sprite2D" parent="."]
+texture = ExtResource("33_d5ne3")
+
+[node name="Panel33" type="Sprite2D" parent="."]
+texture = ExtResource("34_0tg1p")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Ground_fade_delay" to="." method="_on_ground_fade_delay_timeout"]
