@@ -36,6 +36,7 @@ func _ready() -> void:
 	set_deferred("HUD.rocket.max_value", powerup_time_length)
 	set_deferred("HUD.dart.max_value", powerup_time_length)
 	set_deferred("HUD.slowfall.max_value", powerup_time_length)
+	
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:

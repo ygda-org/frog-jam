@@ -40,7 +40,7 @@ func _ready() -> void:
 	
 	get_tree().paused = true
 	paused = true
-
+	
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and paused:
 		get_tree().paused = false

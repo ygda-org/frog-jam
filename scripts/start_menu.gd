@@ -25,3 +25,4 @@ func _on_backtotitle_pressed():
 	$backtotitle.visible = false
 	$Node2D.visible = true
 	$Camera2D.enabled = true
+	get_tree().change_scene_to_file("res://scenes/start_menu.tscn")
