@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://wh8o3unm3dfr"]
+[gd_scene load_steps=8 format=3 uid="uid://wh8o3unm3dfr"]
 
 [ext_resource type="Script" uid="uid://b6x0qx7mrssws" path="res://scripts/start_menu.gd" id="1_fcv5n"]
 [ext_resource type="Texture2D" uid="uid://c1ib6hu2l212y" path="res://assets/images/start/art.PNG" id="1_h61rw"]
 [ext_resource type="Texture2D" uid="uid://bg26ioljgpiqk" path="res://assets/images/start/the revenge of.PNG" id="2_fcv5n"]
 [ext_resource type="Texture2D" uid="uid://vkxjgldib3gs" path="res://assets/images/start/glass pebble frog toad.PNG" id="3_4v6gu"]
 [ext_resource type="Texture2D" uid="uid://bo00sfc485w1e" path="res://assets/images/start/play.PNG" id="4_nxjfj"]
+
+[sub_resource type="Theme" id="Theme_fcv5n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fcv5n"]
+font_size = 48
 
 [node name="StartMenu" type="Control"]
 layout_mode = 3
@@ -45,4 +50,33 @@ offset_top = 1098.0
 offset_right = 967.0
 offset_bottom = 1369.0
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1174.0
+offset_bottom = 674.0
+color = Color(0.20995, 0.466248, 0.602628, 1)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 627.0
+theme = SubResource("Theme_fcv5n")
+text = "You just ate the sun! Now, while the Earth may be left to freeze without its giant lamp, that's none of your problem. You win!"
+label_settings = SubResource("LabelSettings_fcv5n")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="backtotitle" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 539.0
+offset_top = 584.0
+offset_right = 640.0
+offset_bottom = 615.0
+text = "Back to title"
+
 [connection signal="pressed" from="Node2D/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="backtotitle" to="." method="_on_backtotitle_pressed"]
