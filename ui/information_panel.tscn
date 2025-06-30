@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://c28xb5ua2t2ix"]
+[gd_scene load_steps=0 format=3 uid="uid://c28xb5ua2t2ix"]
 
 [node name="Information Panel" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)

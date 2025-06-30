@@ -25,6 +25,7 @@ label = 0
 stream = ExtResource("3_fb584")
 volume = -13.676
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_usrrp"]
@@ -33,6 +34,7 @@ label = 1
 stream = ExtResource("4_fqoqv")
 volume = -9.615
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_5c2g3"]
@@ -41,6 +43,7 @@ label = 2
 stream = ExtResource("5_j3kjd")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_5vfrl"]
@@ -49,6 +52,7 @@ label = 3
 stream = ExtResource("6_63ei2")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_sp5cb"]
@@ -57,6 +61,7 @@ label = 4
 stream = ExtResource("7_kyrla")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_eetqr"]
@@ -65,6 +70,7 @@ label = 5
 stream = ExtResource("8_ltc3j")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_fpy3y"]
@@ -73,6 +79,7 @@ label = 6
 stream = ExtResource("9_3v1uw")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_jblc1"]
@@ -81,6 +88,7 @@ label = 7
 stream = ExtResource("10_p1ub6")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_hfabg"]
@@ -89,6 +97,7 @@ label = 8
 stream = ExtResource("11_1ih07")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_ubfg4"]
@@ -97,6 +106,7 @@ label = 9
 stream = ExtResource("12_3ergr")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_tmag8"]
@@ -105,6 +115,7 @@ label = 10
 stream = ExtResource("13_lhnog")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_twp1p"]
@@ -113,6 +124,7 @@ label = 11
 stream = ExtResource("14_vhhii")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_1ih07"]
@@ -121,6 +133,7 @@ label = 12
 stream = ExtResource("15_kyrla")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_3ergr"]
@@ -129,22 +142,25 @@ label = 13
 stream = ExtResource("16_ltc3j")
 volume = 1.0
 pitch = 1.0
+audio_start_offset = 0.0
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_lhnog"]
 script = ExtResource("2_0wpo5")
 label = 14
 stream = ExtResource("17_3v1uw")
-volume = 1.0
+volume = -11.8
 pitch = 1.0
+audio_start_offset = 0.22
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [sub_resource type="Resource" id="Resource_vhhii"]
 script = ExtResource("2_0wpo5")
 label = 15
 stream = ExtResource("18_p1ub6")
-volume = 1.0
+volume = -10.52
 pitch = 1.0
+audio_start_offset = 0.2
 metadata/_custom_type_script = "uid://c4kn37rwg1t8l"
 
 [node name="AudioManager" type="Node2D"]
