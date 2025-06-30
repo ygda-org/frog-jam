@@ -7,6 +7,7 @@ var sound_effect_dict : Dictionary[SFXSettings.SOUND_EFFECT_LABEL, SFXSettings]
 var rng = RandomNumberGenerator.new()
 
 var playing_background_music = true
+var prev_state = playing_background_music
 
 func _ready() -> void:
 	for setting : SFXSettings in sound_effect_settings:
@@ -24,6 +25,9 @@ func _ready() -> void:
 	playing_background_music = false
 
 func _process(delta: float) -> void:
+	if prev_state != playing_background_music:
+		print(playing_background_music)
+	prev_state = playing_background_music
 	if playing_background_music:
 		return
 	var current_scene = get_tree().root.get_child(1)
@@ -35,7 +39,7 @@ func _process(delta: float) -> void:
 	playing_background_music = true
 
 func _on_audio_finished(source : AudioStreamPlayer):
-	if int(source.name) <= 0:
+	if int(source.name) == 0 or int(source.name) == 16:
 		playing_background_music = false
 
 func create_audio(type : SFXSettings.SOUND_EFFECT_LABEL):

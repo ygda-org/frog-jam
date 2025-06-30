@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://d4ac5b740vh5i" path="res://scenes/water/water_body.tscn" id="9_85g3d"]
 [ext_resource type="PackedScene" uid="uid://3aiq6pjsnudw" path="res://scenes/background.tscn" id="9_choun"]
 [ext_resource type="PackedScene" path="res://ui/information_panel.tscn" id="9_ya4ey"]
-[ext_resource type="PackedScene" path="res://scenes/sun.tscn" id="10_choun"]
+[ext_resource type="PackedScene" uid="uid://bnb4q2aqj5w10" path="res://scenes/sun.tscn" id="10_choun"]
 [ext_resource type="PackedScene" uid="uid://bv0gtd7gib6qt" path="res://ui/death_screen.tscn" id="11_ya4ey"]
 
 [sub_resource type="ViewportTexture" id="ViewportTexture_o6xl0"]

@@ -143,6 +143,7 @@ func collect_frog(frog_data: FrogData) -> void:
 func hit(dmg: int):
 	if not (invincible or poisonous):
 		invincible = true
+		AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.ToadAnnoyed01, Vector2(0.6,0.8))
 		collision_layer = 0
 		health -= dmg
 		health = max(health, 0)
