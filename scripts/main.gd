@@ -32,20 +32,9 @@ var edible_scenes: Dictionary = {
 
 var highest_spawn: float = 0.0
 
-var frog_datas: Array[FrogData] = []
+var frog_datas: Array[FrogData] = [preload("res://assets/resources/frog_resources/dart_frog.tres"), preload("res://assets/resources/frog_resources/rocket_frog.tres"), preload("res://assets/resources/frog_resources/slowfall_frog.tres"), preload("res://assets/resources/frog_resources/wood.tres")]
 
 func _ready() -> void:
-	# grabbing all of the bubble frog resources
-	var dir = DirAccess.open("res://assets/resources/frog_resources")
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			frog_datas.append(load("res://assets/resources/frog_resources/" + file_name) as FrogData)
-			file_name = dir.get_next()
-	else:
-		print("Error loading frog datas")
-	
 	highest_spawn = camera.global_position.y - spawn_margin / 3
 	spawn_up_to(highest_spawn)
 	
