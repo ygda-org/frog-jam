@@ -38,6 +38,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
 		if event.pressed:
+			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.TongueStretch, Vector2(0.9,1))
 			tongue.shoot(tongue.get_local_mouse_position())
 		else:
 			tongue.retract()
