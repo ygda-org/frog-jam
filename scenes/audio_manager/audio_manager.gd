@@ -33,7 +33,7 @@ func create_audio(type : SFXSettings.SOUND_EFFECT_LABEL):
 	audioplayer.finished.connect(audioplayer.queue_free)
 	audioplayer.name = str(sound_effect_setting.label)
 	audioplayer.finished.connect(_on_audio_finished.bind(audioplayer))
-	audioplayer.play()
+	audioplayer.play(sound_effect_setting.audio_start_offset)
 	#GlobalLog.log("Playing: " + str(sound_effect_setting.label))
 
 func create_audio_with_variance(type : SFXSettings.SOUND_EFFECT_LABEL, pitch_range : Vector2):
@@ -46,7 +46,7 @@ func create_audio_with_variance(type : SFXSettings.SOUND_EFFECT_LABEL, pitch_ran
 	audioplayer.finished.connect(audioplayer.queue_free)
 	audioplayer.name = str(sound_effect_setting.label)
 	audioplayer.finished.connect(_on_audio_finished.bind(audioplayer))
-	audioplayer.play()
+	audioplayer.play(sound_effect_setting.audio_start_offset)
 
 func clear_all_audio():
 	for child in get_children():
