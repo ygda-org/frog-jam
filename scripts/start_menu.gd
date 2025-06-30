@@ -9,6 +9,8 @@ func _on_button_pressed():
 	add_child(INTRO.instantiate())
 
 func win():
+	$Node2D.visible = false
+	$Camera2D.enabled = false
 	add_child(ENDING.instantiate())
 
 func show_win_text():
