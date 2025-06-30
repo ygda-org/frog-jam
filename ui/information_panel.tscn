@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://c28xb5ua2t2ix"]
+[gd_scene load_steps=2 format=3 uid="uid://c28xb5ua2t2ix"]
+
+[ext_resource type="Script" uid="uid://cwqrrliefragt" path="res://scripts/information_panel.gd" id="1_b8fsv"]
 
 [node name="Information Panel" type="PanelContainer"]
 custom_minimum_size = Vector2(100, 100)
@@ -15,6 +17,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+script = ExtResource("1_b8fsv")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2

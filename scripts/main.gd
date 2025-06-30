@@ -11,8 +11,11 @@ extends Node2D
 @onready var camera: Camera2D = $Camera2D
 
 @onready var death_screen: DeathScreen = $"CanvasLayer/Death Screen"
+@onready var information_panel: InformationPanel = $"CanvasLayer/Information Panel"
 
 var FROG_BUBBLE_SCENE: PackedScene = preload("res://scenes/frog_bubble.tscn")
+
+var paused: bool
 
 var enemy_scenes: Dictionary = {
 	"kite": preload("res://scenes/enemies/kite.tscn"),
@@ -47,6 +50,12 @@ func _ready() -> void:
 	spawn_up_to(highest_spawn)
 	
 	get_tree().paused = false
+	paused = true
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and paused:
+		paused = false
+		information_panel.visible = false
 
 func _process(delta: float) -> void:
 	var cam_top = camera.global_position.y - get_viewport_rect().size.y * 0.5
