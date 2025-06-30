@@ -45,7 +45,9 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	velocity.y += GRAVITY
+	print(global_position)
+	if global_position.y < -5:
+		velocity.y += GRAVITY
 
 	if tongue.hooked:
 		if $Anim.animation != "expanded" and $Anim.animation != "expand":
