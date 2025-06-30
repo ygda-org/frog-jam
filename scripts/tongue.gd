@@ -66,7 +66,8 @@ func _physics_process(delta: float) -> void:
 		if collision:
 			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.TongueHit, Vector2(0.8,1))
 			self.hooked_creature = collision.get_collider()
-			self.hooked_creature.play_hit_noise()
+			if self.hooked_creature.has_method("play_hit_noise"):
+				self.hooked_creature.play_hit_noise()
 			if self.hooked_creature.name == "Bird":
 				relative_hooked_position = self.hooked_creature.global_position - self.tongue_tip.global_position
 			self.hooked = true
