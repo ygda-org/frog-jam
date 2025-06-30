@@ -22,3 +22,7 @@ func _process(delta: float) -> void:
 	offset_position.x = origin_position.x + cos(elapsed_time) * shake_radius
 	offset_position.y = origin_position.y + sin(elapsed_time) * shake_radius
 	position = offset_position
+
+func play_hit_noise():
+	#AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.BirdHurt01, Vector2(0.8,1.2))
+	pass

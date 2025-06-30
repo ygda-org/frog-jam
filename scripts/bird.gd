@@ -17,3 +17,6 @@ func _physics_process(delta):
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
 	scale.x *= -1
 	velocity.x *= -1
+
+func play_hit_noise():
+	AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.BirdHurt01, Vector2(0.8,1.2))
