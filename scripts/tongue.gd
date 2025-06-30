@@ -64,6 +64,7 @@ func _physics_process(delta: float) -> void:
 	if flying:
 		var collision: KinematicCollision2D = self.tongue_tip.move_and_collide(direction * SPEED)
 		if collision:
+			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.TongueHit, Vector2(0.8,1))
 			self.hooked_creature = collision.get_collider()
 			if self.hooked_creature.name == "Bird":
 				relative_hooked_position = self.hooked_creature.global_position - self.tongue_tip.global_position
@@ -75,6 +76,7 @@ func _physics_process(delta: float) -> void:
 	elif retracting:
 		var collision: KinematicCollision2D = self.tongue_tip.move_and_collide(-to_local(self.tip_position).normalized() * SPEED * 1.5)
 		if collision:
+			AudioManager.create_audio_with_variance(SFXSettings.SOUND_EFFECT_LABEL.TongueHit, Vector2(0.8,1))
 			self.hooked_creature = collision.get_collider()
 			self.hooked = true
 			self.flying = false

@@ -152,5 +152,4 @@ func _input(event: InputEvent) -> void:
 		start_game()
 
 func start_game():
-	get_parent().add_child(load("res://scenes/main.tscn").instantiate())
-	queue_free()
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

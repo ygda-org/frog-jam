@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://b08a0a7wtcyqe"]
+[gd_scene load_steps=51 format=3 uid="uid://b1673h3tk0ihs"]
 
 [ext_resource type="Script" uid="uid://pd4hkcsayvl5" path="res://scripts/intro_cutscene.gd" id="1_on3y1"]
 [ext_resource type="Texture2D" uid="uid://dbqlrpxur6ugk" path="res://assets/images/intro/scene_1-1.png" id="2_wo2cs"]
