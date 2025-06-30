@@ -152,4 +152,5 @@ func _on_pre_flash_delay_timeout():
 		#start_game()
 
 func start_game():
+	AudioManager.clear_all_audio()
 	get_tree().change_scene_to_file("res://scenes/main.tscn")

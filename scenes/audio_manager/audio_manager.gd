@@ -6,17 +6,32 @@ var sound_effect_dict : Dictionary[SFXSettings.SOUND_EFFECT_LABEL, SFXSettings]
 
 var rng = RandomNumberGenerator.new()
 
-var playing_background_music = false
+var playing_background_music = true
 
 func _ready() -> void:
 	for setting : SFXSettings in sound_effect_settings:
 		sound_effect_dict[setting.label] = setting
+	
+	var audioplayer : AudioStreamPlayer = AudioStreamPlayer.new()
+	add_child(audioplayer)
+	var sound_effect_setting = sound_effect_dict[SFXSettings.SOUND_EFFECT_LABEL.IntroSingle]
+	audioplayer.stream = sound_effect_setting.stream
+	audioplayer.volume_db = sound_effect_setting.volume
+	audioplayer.finished.connect(audioplayer.queue_free)
+	audioplayer.name = str(sound_effect_setting.label)
+	audioplayer.play(sound_effect_setting.audio_start_offset)
+	await audioplayer.finished
+	playing_background_music = false
 
 func _process(delta: float) -> void:
 	if playing_background_music:
 		return
-	
-	create_audio(SFXSettings.SOUND_EFFECT_LABEL.MainGameSong01)
+	var current_scene = get_tree().root.get_child(1)
+	if current_scene == null: return
+	if current_scene.name == "StartMenu":
+		create_audio(SFXSettings.SOUND_EFFECT_LABEL.IntroLoop)
+	else:
+		create_audio(SFXSettings.SOUND_EFFECT_LABEL.MainGameSong01)
 	playing_background_music = true
 
 func _on_audio_finished(source : AudioStreamPlayer):
@@ -51,3 +66,4 @@ func create_audio_with_variance(type : SFXSettings.SOUND_EFFECT_LABEL, pitch_ran
 func clear_all_audio():
 	for child in get_children():
 		child.queue_free()
+	playing_background_music = false

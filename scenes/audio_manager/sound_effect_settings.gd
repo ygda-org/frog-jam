@@ -18,7 +18,9 @@ enum SOUND_EFFECT_LABEL{
 	FrogCroak,
 	FrogGulp,
 	TongueHit,
-	TongueStretch
+	TongueStretch,
+	IntroLoop,
+	IntroSingle,
 }
 
 @export var label : SOUND_EFFECT_LABEL
