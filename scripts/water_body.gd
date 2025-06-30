@@ -20,7 +20,7 @@ func _ready() -> void:
 	position.x -= VIEWPORT_SIZE.x/2
 	
 	var window_width = VIEWPORT_SIZE.x
-	for x in range (-2300, 6300 + SPRING_GAP_DIST, SPRING_GAP_DIST):
+	for x in range (-2300, 7100 + SPRING_GAP_DIST, SPRING_GAP_DIST):
 		var instance = WATER_SPRING.instantiate()
 		instance.target_height = starting_y
 		instance.position.y = starting_y
@@ -50,5 +50,5 @@ func draw_water_polygon():
 	points.append(Vector2(-2300,3000))
 	for spring in springs:
 		points.append(Vector2(spring.position.x, spring.wave_position))
-	points.append(Vector2(6300, 3000))
+	points.append(Vector2(7100, 3000))
 	$Polygon2D.polygon = points

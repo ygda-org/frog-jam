@@ -144,5 +144,7 @@ func weighted_random(choices: Dictionary):
 	return choices.keys()[-1]
 
 func win():
-	get_parent().win()
+	var start = load("res://scenes/start_menu.tscn").instantiate()
+	start.win()
+	get_parent().add_child(start)
 	call_deferred("queue_free")

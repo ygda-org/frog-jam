@@ -26,6 +26,8 @@ var chain_velocity := Vector2(0,0)
 
 var poisonous : bool = false
 
+var highest_height: float
+
 func _ready() -> void:
 	self.slowfall_timer.wait_time = self.powerup_time_length
 	self.dart_timer.wait_time = self.powerup_time_length
@@ -45,7 +47,15 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	velocity.y += GRAVITY
+	if global_position.y < highest_height:
+		highest_height = global_position.y
+	
+	#print(highest_height)
+	if global_position.y < -5:
+		velocity.y += GRAVITY
+		
+	elif highest_height < -100:
+		player_dead.emit()
 
 	if tongue.hooked:
 		if $Anim.animation != "expanded" and $Anim.animation != "expand":
@@ -74,6 +84,7 @@ func _physics_process(_delta: float) -> void:
 	
 	var unit_scale = 0.01
 	HUD.height_label.text = str(-(int((position.y-30)*unit_scale))) + " m"
+	HUD.max_health_label.text = str(-(int((highest_height-30)*unit_scale))) + " m"
 	HUD.speed_label.text = str(int(sqrt(velocity.x**2+velocity.y**2)*unit_scale)) + " m/s"
 	HUD.rocket.value = rocket_timer.time_left
 	HUD.dart.value = dart_timer.time_left
@@ -127,6 +138,7 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.rocket_timer.start()
 		FrogData.Powerups.Wood:
 			health += 20
+			HUD.health_label.text = str(health)
 
 func hit(dmg: int):
 	if not (invincible or poisonous):
