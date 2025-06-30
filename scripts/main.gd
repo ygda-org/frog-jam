@@ -49,11 +49,12 @@ func _ready() -> void:
 	highest_spawn = camera.global_position.y - spawn_margin / 3
 	spawn_up_to(highest_spawn)
 	
-	get_tree().paused = false
+	get_tree().paused = true
 	paused = true
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and paused:
+		get_tree().paused = false
 		paused = false
 		information_panel.visible = false
 

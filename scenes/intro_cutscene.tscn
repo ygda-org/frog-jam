@@ -313,9 +313,19 @@ texture = ExtResource("33_d5ne3")
 [node name="Panel33" type="Sprite2D" parent="."]
 texture = ExtResource("34_0tg1p")
 
+[node name="Button" type="Button" parent="."]
+custom_minimum_size = Vector2(215, 0)
+offset_left = 1588.0
+offset_top = 935.0
+offset_right = 1858.0
+offset_bottom = 1045.0
+theme_override_font_sizes/font_size = 50
+text = "Skip"
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Ground_fade_delay" to="." method="_on_ground_fade_delay_timeout"]
 [connection signal="timeout" from="umbrella_delay" to="." method="_on_umbrella_delay_timeout"]
 [connection signal="timeout" from="scene_2_end_delay" to="." method="_on_scene_2_end_delay_timeout"]
 [connection signal="animation_finished" from="Panel12" to="." method="_on_panel_12_animation_finished"]
 [connection signal="timeout" from="PreFlashDelay" to="." method="_on_pre_flash_delay_timeout"]
+[connection signal="pressed" from="Button" to="." method="start_game"]

@@ -147,9 +147,9 @@ func _on_panel_12_animation_finished():
 func _on_pre_flash_delay_timeout():
 	flashing = true
 
-func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
-		start_game()
+#func _input(event: InputEvent) -> void:
+	#if event is InputEventMouseButton:
+		#start_game()
 
 func start_game():
 	get_tree().change_scene_to_file("res://scenes/main.tscn")
