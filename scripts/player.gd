@@ -129,6 +129,7 @@ func collect_frog(frog_data: FrogData) -> void:
 			self.rocket_timer.start()
 		FrogData.Powerups.Wood:
 			health += 20
+			HUD.health_label.text = str(health)
 
 func hit(dmg: int):
 	if not (invincible or poisonous):
