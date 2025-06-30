@@ -15,6 +15,10 @@ enum SOUND_EFFECT_LABEL{
 	ToadQuack02,
 	ToadQuack03,
 	ToadQuack04,
+	FrogCroak,
+	FrogGulp,
+	TongueHit,
+	TongueStretch
 }
 
 @export var label : SOUND_EFFECT_LABEL
