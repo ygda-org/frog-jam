@@ -45,7 +45,6 @@ func _input(event: InputEvent) -> void:
 
 
 func _physics_process(_delta: float) -> void:
-	print(global_position)
 	if global_position.y < -5:
 		velocity.y += GRAVITY
 
