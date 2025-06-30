@@ -32,6 +32,11 @@ func _process(delta: float) -> void:
 	offset_position.y = origin_position.y + sin(elapsed_time) * shake_radius
 	position = offset_position
 	move_and_slide()
+	
+	for i in range(get_slide_collision_count()):
+		var collision_obj := get_slide_collision(i).get_collider()
+		if collision_obj != null  && collision_obj.name == "Player":
+			call_deferred("queue_free")
 
 func _to_string() -> String:
 	return "KITE-" + str(position)
